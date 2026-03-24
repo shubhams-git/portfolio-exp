@@ -1,0 +1,33 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#050505"/>
+  <rect x="56" y="56" width="1088" height="688" stroke="#2D2D31" stroke-width="2"/>
+  <rect x="98" y="102" width="1004" height="560" fill="#0F0F11" stroke="#3B3B41"/>
+  <rect x="98" y="686" width="1004" height="44" fill="#111113" stroke="#3B3B41"/>
+
+  <g opacity="0.4">
+    <path d="M136 176H1064" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M136 250H1064" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M136 324H1064" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M136 398H1064" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M136 472H1064" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M136 546H1064" stroke="#2E2E34" stroke-width="1"/>
+  </g>
+
+  <rect x="136" y="132" width="276" height="108" fill="#111113" stroke="#47474D"/>
+  <rect x="432" y="132" width="276" height="108" fill="#0B0B0C" stroke="#47474D"/>
+  <rect x="728" y="132" width="296" height="108" fill="#111113" stroke="#47474D"/>
+
+  <rect x="136" y="278" width="888" height="262" fill="#09090A" stroke="#47474D"/>
+  <path d="M172 492C228 468 260 456 306 460C352 464 386 432 440 430C494 428 530 462 580 454C630 446 654 392 716 390C778 388 816 442 870 438C924 434 974 382 1020 372" stroke="#6FFBBE" stroke-width="4"/>
+  <path d="M172 470L224 426L274 440L326 392L380 408L434 372L490 390L548 344L604 368L662 322L722 352L788 314L850 340L918 292L982 320" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="2"/>
+
+  <rect x="136" y="572" width="428" height="68" fill="#111113" stroke="#47474D"/>
+  <rect x="586" y="572" width="438" height="68" fill="#111113" stroke="#47474D"/>
+  <circle cx="238" cy="606" r="20" stroke="#6FFBBE" stroke-width="2"/>
+  <circle cx="684" cy="606" r="20" stroke="#A1A1AA" stroke-width="2"/>
+  <path d="M184 606H292" stroke="#6FFBBE" stroke-opacity="0.7" stroke-width="2"/>
+  <path d="M630 606H738" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="2"/>
+
+  <text x="136" y="114" fill="#6FFBBE" font-family="Arial, sans-serif" font-size="22" letter-spacing="6">WEATHER / DATA VISUALIZATION</text>
+  <text x="756" y="114" fill="#A1A1AA" font-family="Arial, sans-serif" font-size="16" letter-spacing="4">FORECAST PANEL</text>
+</svg>

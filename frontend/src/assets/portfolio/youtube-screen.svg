@@ -1,0 +1,45 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#050505"/>
+  <rect x="48" y="48" width="1104" height="704" stroke="#2D2D31" stroke-width="2"/>
+  <rect x="82" y="86" width="1046" height="626" fill="#0F0F11" stroke="#3B3B41"/>
+  <rect x="82" y="86" width="1046" height="76" fill="#111113" stroke="#3B3B41"/>
+
+  <rect x="118" y="184" width="384" height="360" fill="#0A0A0B" stroke="#47474D"/>
+  <rect x="522" y="184" width="242" height="166" fill="#101012" stroke="#47474D"/>
+  <rect x="782" y="184" width="306" height="166" fill="#101012" stroke="#47474D"/>
+  <rect x="522" y="370" width="242" height="174" fill="#111113" stroke="#47474D"/>
+  <rect x="782" y="370" width="306" height="174" fill="#111113" stroke="#47474D"/>
+  <rect x="118" y="562" width="970" height="98" fill="#0B0B0C" stroke="#47474D"/>
+
+  <g opacity="0.4">
+    <path d="M142 226H478" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M142 264H478" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M142 302H478" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M142 340H478" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M142 378H478" stroke="#2E2E34" stroke-width="1"/>
+  </g>
+
+  <rect x="156" y="194" width="304" height="170" fill="#151518" stroke="#4A4A51"/>
+  <rect x="172" y="212" width="88" height="52" fill="#0F0F11" stroke="#47474D"/>
+  <rect x="270" y="212" width="88" height="52" fill="#0F0F11" stroke="#47474D"/>
+  <rect x="368" y="212" width="76" height="52" fill="#0F0F11" stroke="#47474D"/>
+  <rect x="172" y="278" width="272" height="18" fill="#A1A1AA" opacity="0.26"/>
+  <rect x="172" y="306" width="216" height="18" fill="#A1A1AA" opacity="0.26"/>
+  <path d="M156 356H460" stroke="#6FFBBE" stroke-opacity="0.75" stroke-width="2"/>
+
+  <rect x="548" y="210" width="146" height="96" fill="#151518" stroke="#4A4A51"/>
+  <rect x="808" y="210" width="146" height="96" fill="#151518" stroke="#4A4A51"/>
+  <rect x="548" y="396" width="146" height="96" fill="#151518" stroke="#4A4A51"/>
+  <rect x="808" y="396" width="146" height="96" fill="#151518" stroke="#4A4A51"/>
+
+  <rect x="154" y="586" width="252" height="46" fill="#151518" stroke="#4A4A51"/>
+  <rect x="424" y="586" width="252" height="46" fill="#151518" stroke="#4A4A51"/>
+  <rect x="694" y="586" width="252" height="46" fill="#151518" stroke="#4A4A51"/>
+
+  <path d="M180 620H346" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M450 620H616" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M720 620H886" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+
+  <text x="118" y="118" fill="#6FFBBE" font-family="Arial, sans-serif" font-size="22" letter-spacing="6">MEDIA GRID / LAYOUT SYSTEM</text>
+  <text x="900" y="118" fill="#A1A1AA" font-family="Arial, sans-serif" font-size="16" letter-spacing="4">THUMBNAILS</text>
+</svg>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shubham Sharma Resume</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050505;
+        --surface: #0f0f11;
+        --line: #27272a;
+        --text: #ffffff;
+        --muted: #a1a1aa;
+        --accent: #6ffbbe;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: radial-gradient(circle at top, rgba(111, 251, 190, 0.08), transparent 28rem), var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+      }
+
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 48px 24px 72px;
+      }
+
+      .sheet {
+        border: 1px solid var(--line);
+        background: rgba(15, 15, 17, 0.95);
+        padding: 28px;
+      }
+
+      header {
+        display: grid;
+        gap: 12px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 24px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 42px;
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .meta,
+      .kicker {
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 12px;
+      }
+
+      .highlight {
+        color: var(--accent);
+      }
+
+      section {
+        display: grid;
+        gap: 16px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      section:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 24px;
+      }
+
+      .stack {
+        color: var(--muted);
+      }
+
+      @media (max-width: 700px) {
+        main {
+          padding: 20px;
+        }
+
+        .sheet {
+          padding: 20px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="sheet">
+        <header>
+          <div class="kicker">Resume / Portfolio Artifact</div>
+          <h1>Shubham Sharma</h1>
+          <p class="meta">Melbourne, AU | Software Developer | Open to new opportunities</p>
+          <p>Building clean full-stack applications, integrating practical AI solutions, and focusing on reliable user experiences.</p>
+        </header>
+
+        <section>
+          <h2 class="highlight">Core Stack</h2>
+          <p class="stack">React, TypeScript, Node.js, Express, MongoDB, Python, FastAPI, Azure, Docker, OpenAI API</p>
+        </section>
+
+        <section>
+          <h2 class="highlight">Selected Work</h2>
+          <div class="grid">
+            <div>
+              <h3>RizzBot</h3>
+              <p>AI-driven conversational product with practical full-stack orchestration.</p>
+            </div>
+            <div>
+              <h3>Weather App</h3>
+              <p>Weather visualization interface focused on performant data rendering and clarity.</p>
+            </div>
+            <div>
+              <h3>YouTube Clone</h3>
+              <p>Frontend replication exercise emphasizing layout systems and interaction polish.</p>
+            </div>
+            <div>
+              <h3>AI Financial Forecasting</h3>
+              <p>Predictive modeling project packaged into an accessible application layer.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="highlight">Experience</h2>
+          <ul>
+            <li>Philotimo Global - AI / Backend / MCP integration</li>
+            <li>Aubot - React / TypeScript frontend development</li>
+            <li>Inverloch Bike Hire - Full-stack web development</li>
+            <li>Manatzura - Flutter / IoT app development</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="highlight">Contact</h2>
+          <p>Use the portfolio contact form for verified links and direct outreach.</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

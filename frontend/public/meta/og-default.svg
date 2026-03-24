@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">The Layered Matrix</title>
+  <desc id="desc">Dark recruiter-facing portfolio preview for Shubham Sharma.</desc>
+  <rect width="1200" height="630" fill="#050505" />
+  <rect x="48" y="48" width="1104" height="534" stroke="#27272A" />
+  <rect x="80" y="80" width="1040" height="470" stroke="#3F3F46" stroke-opacity="0.45" />
+  <path d="M80 190H1120" stroke="#27272A" />
+  <path d="M80 440H1120" stroke="#27272A" />
+  <path d="M600 80V550" stroke="#27272A" />
+  <text x="80" y="146" fill="#A1A1AA" font-family="JetBrains Mono, monospace" font-size="24" letter-spacing="6">ARCHITECT_OS</text>
+  <text x="80" y="290" fill="#FFFFFF" font-family="Clash Display, Georgia, serif" font-size="82" font-weight="600" letter-spacing="-4">THE LAYERED</text>
+  <text x="80" y="374" fill="#FFFFFF" font-family="Clash Display, Georgia, serif" font-size="82" font-weight="600" letter-spacing="-4">MATRIX</text>
+  <text x="80" y="498" fill="#A1A1AA" font-family="Switzer, Inter, sans-serif" font-size="28">Recruiter-readable full-stack portfolio</text>
+  <text x="80" y="542" fill="#6FFBBE" font-family="JetBrains Mono, monospace" font-size="18" letter-spacing="4">SHUBHAM SHARMA / SOFTWARE DEVELOPER</text>
+  <text x="816" y="164" fill="#A1A1AA" font-family="JetBrains Mono, monospace" font-size="18" letter-spacing="3">VISUAL REFERENCE</text>
+  <text x="816" y="228" fill="#FFFFFF" font-family="Clash Display, Georgia, serif" font-size="40" font-weight="600" letter-spacing="-2">DARK GRID</text>
+  <text x="816" y="276" fill="#FFFFFF" font-family="Clash Display, Georgia, serif" font-size="40" font-weight="600" letter-spacing="-2">EDITORIAL</text>
+  <text x="816" y="324" fill="#FFFFFF" font-family="Clash Display, Georgia, serif" font-size="40" font-weight="600" letter-spacing="-2">PORTFOLIO</text>
+  <text x="816" y="386" fill="#A1A1AA" font-family="Switzer, Inter, sans-serif" font-size="22">Static metadata fallback for social previews and link unfurls.</text>
+  <circle cx="1038" cy="456" r="68" stroke="#6FFBBE" stroke-opacity="0.8" stroke-width="2" />
+  <circle cx="1038" cy="456" r="32" fill="#0F0F11" stroke="#E4E4E7" stroke-opacity="0.8" />
+</svg>

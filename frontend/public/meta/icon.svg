@@ -1,0 +1,10 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">The Layered Matrix icon</title>
+  <desc id="desc">Minimal monogram for the portfolio site.</desc>
+  <rect width="512" height="512" fill="#050505" />
+  <rect x="40" y="40" width="432" height="432" stroke="#27272A" />
+  <path d="M128 154H384" stroke="#FFFFFF" stroke-width="22" stroke-linecap="square" />
+  <path d="M128 256H384" stroke="#FFFFFF" stroke-width="22" stroke-linecap="square" />
+  <path d="M128 358H384" stroke="#6FFBBE" stroke-width="22" stroke-linecap="square" />
+  <text x="102" y="297" fill="#E4E4E7" font-family="JetBrains Mono, monospace" font-size="88" font-weight="700" letter-spacing="8">OS</text>
+</svg>

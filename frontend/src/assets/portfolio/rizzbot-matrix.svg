@@ -1,0 +1,48 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#050505"/>
+  <rect x="48" y="48" width="1104" height="704" stroke="#2D2D31" stroke-width="2"/>
+  <rect x="92" y="92" width="496" height="616" fill="#0F0F11" stroke="#3B3B41"/>
+  <rect x="640" y="92" width="468" height="180" fill="#111113" stroke="#3B3B41"/>
+  <rect x="640" y="300" width="468" height="408" fill="#0F0F11" stroke="#3B3B41"/>
+
+  <g opacity="0.38">
+    <path d="M92 188H588" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M92 252H588" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M92 316H588" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M92 380H588" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M92 444H588" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M92 508H588" stroke="#2E2E34" stroke-width="1"/>
+    <path d="M92 572H588" stroke="#2E2E34" stroke-width="1"/>
+  </g>
+
+  <rect x="120" y="132" width="208" height="84" fill="#151518" stroke="#4A4A51"/>
+  <rect x="348" y="132" width="208" height="84" fill="#101012" stroke="#4A4A51"/>
+  <rect x="120" y="236" width="436" height="186" fill="#0B0B0C" stroke="#404047"/>
+  <rect x="120" y="446" width="208" height="170" fill="#111113" stroke="#404047"/>
+  <rect x="348" y="446" width="208" height="170" fill="#111113" stroke="#404047"/>
+
+  <rect x="676" y="126" width="158" height="18" fill="#D9D9DE" opacity="0.82"/>
+  <rect x="676" y="160" width="246" height="12" fill="#A1A1AA" opacity="0.7"/>
+  <rect x="676" y="184" width="204" height="12" fill="#A1A1AA" opacity="0.4"/>
+  <rect x="676" y="208" width="128" height="12" fill="#A1A1AA" opacity="0.28"/>
+
+  <rect x="676" y="336" width="136" height="14" fill="#D9D9DE" opacity="0.78"/>
+  <rect x="676" y="372" width="336" height="120" fill="#0A0A0B" stroke="#45454B"/>
+  <path d="M708 456C748 432 770 412 806 416C842 420 860 452 896 450C932 448 948 408 992 408" stroke="#6FFBBE" stroke-width="3"/>
+  <path d="M708 446L760 398L808 416L858 378L912 396L962 356L1018 370" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="2"/>
+
+  <rect x="676" y="532" width="232" height="76" fill="#151518" stroke="#4A4A51"/>
+  <rect x="930" y="532" width="82" height="76" fill="#141417" stroke="#4A4A51"/>
+  <circle cx="763" cy="570" r="20" stroke="#6FFBBE" stroke-width="2"/>
+  <circle cx="967" cy="570" r="18" stroke="#A1A1AA" stroke-width="2"/>
+
+  <path d="M164 284H540" stroke="#6FFBBE" stroke-opacity="0.8" stroke-width="2"/>
+  <path d="M164 340H470" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M164 370H438" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M164 500H296" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M392 500H524" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M164 530H280" stroke="#6FFBBE" stroke-opacity="0.7" stroke-width="2"/>
+
+  <text x="120" y="110" fill="#6FFBBE" font-family="Arial, sans-serif" font-size="22" letter-spacing="6">RIZZBOT / MESSAGING LAYER</text>
+  <text x="676" y="110" fill="#A1A1AA" font-family="Arial, sans-serif" font-size="16" letter-spacing="4">SESSION METRICS</text>
+</svg>

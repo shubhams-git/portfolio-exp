@@ -1,0 +1,36 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#050505"/>
+  <rect x="50" y="50" width="1100" height="700" stroke="#2D2D31" stroke-width="2"/>
+  <rect x="96" y="96" width="1008" height="608" fill="#0F0F11" stroke="#3B3B41"/>
+  <rect x="96" y="96" width="1008" height="92" fill="#111113" stroke="#3B3B41"/>
+
+  <circle cx="346" cy="418" r="192" stroke="#2E2E34" stroke-width="2"/>
+  <circle cx="346" cy="418" r="138" stroke="#2E2E34" stroke-width="2"/>
+  <circle cx="346" cy="418" r="84" stroke="#2E2E34" stroke-width="2"/>
+  <circle cx="346" cy="418" r="28" stroke="#6FFBBE" stroke-width="3"/>
+  <path d="M154 418H538" stroke="#2E2E34" stroke-width="2"/>
+  <path d="M346 226V610" stroke="#2E2E34" stroke-width="2"/>
+  <path d="M218 290L474 546" stroke="#2E2E34" stroke-width="2"/>
+  <path d="M474 290L218 546" stroke="#2E2E34" stroke-width="2"/>
+  <path d="M188 376L504 376" stroke="#2E2E34" stroke-width="2"/>
+  <path d="M188 458L504 458" stroke="#2E2E34" stroke-width="2"/>
+  <path d="M256 264L436 572" stroke="#2E2E34" stroke-width="1"/>
+  <path d="M436 264L256 572" stroke="#2E2E34" stroke-width="1"/>
+
+  <path d="M214 444C272 398 310 364 346 356C388 346 428 362 474 330C520 298 564 266 608 274" stroke="#6FFBBE" stroke-width="4"/>
+  <path d="M214 444C272 398 310 364 346 356C388 346 428 362 474 330C520 298 564 266 608 274" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="10"/>
+
+  <rect x="662" y="228" width="390" height="114" fill="#101012" stroke="#47474D"/>
+  <rect x="662" y="364" width="390" height="114" fill="#101012" stroke="#47474D"/>
+  <rect x="662" y="500" width="390" height="114" fill="#101012" stroke="#47474D"/>
+
+  <rect x="696" y="258" width="148" height="18" fill="#D9D9DE" opacity="0.82"/>
+  <rect x="696" y="292" width="260" height="12" fill="#A1A1AA" opacity="0.52"/>
+  <rect x="696" y="400" width="170" height="18" fill="#D9D9DE" opacity="0.82"/>
+  <rect x="696" y="434" width="228" height="12" fill="#A1A1AA" opacity="0.52"/>
+  <rect x="696" y="536" width="188" height="18" fill="#D9D9DE" opacity="0.82"/>
+  <rect x="696" y="570" width="246" height="12" fill="#A1A1AA" opacity="0.52"/>
+
+  <text x="132" y="138" fill="#6FFBBE" font-family="Arial, sans-serif" font-size="22" letter-spacing="6">FORECAST / MODEL SURFACE</text>
+  <text x="714" y="138" fill="#A1A1AA" font-family="Arial, sans-serif" font-size="16" letter-spacing="4">RADAR LINES + OUTPUT</text>
+</svg>
