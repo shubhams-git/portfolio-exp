@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#050505",
+                        "on-primary-container": "#000000",
+                        "primary-container": "#d4d4d7",
+                        "surface-bright": "#3a3939",
+                        "on-tertiary-fixed-variant": "#6ffbbe",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed": "#ffffff",
+                        "surface": "#050505",
+                        "outline-variant": "#474747",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed": "#ffffff",
+                        "primary-fixed-dim": "#454749",
+                        "inverse-primary": "#5d5e61",
+                        "secondary-container": "#45464e",
+                        "surface-tint": "#c6c6c9",
+                        "secondary": "#c6c6cf",
+                        "on-secondary": "#1a1b22",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#00a572",
+                        "on-surface": "#e5e2e1",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed": "#1a1b22",
+                        "surface-dim": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-container": "#e2e1eb",
+                        "outline": "#919191",
+                        "on-tertiary": "#002113",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#1a1c1e",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "tertiary-fixed-dim": "#005236",
+                        "on-surface-variant": "#c6c6c6",
+                        "on-tertiary-container": "#000000",
+                        "on-secondary-fixed-variant": "#3a3b42",
+                        "primary": "#ffffff",
+                        "tertiary": "#6ffbbe",
+                        "surface-variant": "#353534",
+                        "secondary-fixed-dim": "#aaaab3",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#5d5e61",
+                        "secondary-fixed": "#c6c6cf",
+                        "tertiary-fixed": "#006c49",
+                        "on-primary-fixed-variant": "#e2e2e5"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 768px) {
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .project-card {
+            border: 0.5px solid #27272A;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+            border-color: #E4E4E7;
+            background-color: rgba(255, 255, 255, 0.02);
+            transform: translateY(-2px);
+        }
+        .clash-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopAppBar -->
+<header class="bg-[#050505]/70 backdrop-blur-md text-white fixed top-0 w-full z-50 border-b border-white/10 flex justify-between items-center px-6 py-4 w-full max-w-none">
+<div class="font-['Space_Grotesk'] font-bold text-xl tracking-tighter text-white">ARCHITECT_OS</div>
+<nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tighter uppercase text-sm">
+<a class="text-white border-b border-white pb-1" href="#">WORK</a>
+<a class="text-[#A1A1AA] hover:text-white transition-colors" href="#">STACK</a>
+<a class="text-[#A1A1AA] hover:text-white transition-colors" href="#">ABOUT</a>
+<a class="text-[#A1A1AA] hover:text-white transition-colors" href="#">CONTACT</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hover:bg-white/5 transition-all duration-200 p-2 active:scale-95 duration-100">
+<span class="material-symbols-outlined text-white" data-icon="terminal">terminal</span>
+</button>
+</div>
+</header>
+<main class="pt-24 min-h-screen">
+<!-- Section Header -->
+<section class="px-6 py-12 md:py-20 border-b border-white/5">
+<div class="max-w-7xl mx-auto">
+<div class="font-mono text-tertiary text-xs tracking-[0.2em] mb-4 uppercase">[01] SYSTEM ARCHITECTURE &amp; PROJECTS</div>
+<h1 class="clash-display text-5xl md:text-8xl tracking-tighter leading-none mb-8">ENGINEERING<br/><span class="text-outline-variant">PORTFOLIO</span></h1>
+<p class="max-w-2xl text-[#A1A1AA] font-light leading-relaxed">A specialized index of high-performance systems, data-intensive interfaces, and automated neural architectures developed between 2022-2024.</p>
+</div>
+</section>
+<!-- Work Matrix Grid -->
+<section class="max-w-7xl mx-auto matrix-grid border-l border-white/5 border-r border-white/5">
+<!-- Project 01: RizzBot -->
+<article class="project-card p-8 md:p-12 flex flex-col group h-full">
+<div class="mb-8 overflow-hidden aspect-video bg-surface-container-lowest">
+<img alt="AI Interface" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Futuristic AI chatbot interface with neon glowing circuits and digital neural network data visualization in dark moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjE580-lVFsyXdqQYgWP18355wnvshZ6f7X3Uy5DSgI1JI1ggrlr2hVL3aEcIFZN0--s-rQuA4WBNPWE3ES9mmRt67ZA1DGvIDm05p69DaWfuuhQosqzUWi4Xp6NK8uFxPxzSdEWsulyykR2kgS3Oej1kggQZev4fR-VcJ36bXy6WCxhcqdqb7NvNChBkLIy0c0WwxVHCWOQlPnu87Onn5j2LIsheVZ1GJ65ggYS354f8bWwM4YVRQ9PD0MTy1C5lnOIZr0IxEMeGt"/>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="font-mono text-[10px] text-tertiary mb-2 block uppercase">PROJECT_ID: RB_01</span>
+<h2 class="clash-display text-3xl tracking-tight">RizzBot</h2>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-tertiary transition-colors" data-icon="north_east">north_east</span>
+</div>
+<div class="space-y-6 flex-grow">
+<div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-6">
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Role</p>
+<p class="text-sm font-medium">Full-Stack Developer</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Core Stack</p>
+<p class="text-sm font-medium">React, Node.js, AI</p>
+</div>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Architecture Challenge</p>
+<p class="text-sm text-[#A1A1AA] leading-relaxed">Implementing a low-latency streaming pipeline for GPT-4 responses while managing multi-turn conversational context in a stateless environment.</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Impact</p>
+<p class="text-sm font-semibold text-white">Achieved <span class="text-tertiary">200ms</span> average response time and scaled to <span class="text-tertiary">50k+</span> monthly active users.</p>
+</div>
+</div>
+</article>
+<!-- Project 02: Weather App -->
+<article class="project-card p-8 md:p-12 flex flex-col group h-full">
+<div class="mb-8 overflow-hidden aspect-video bg-surface-container-lowest">
+<img alt="Data Visualization" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Complex D3.js data visualization dashboard with intricate lines and nodes representing weather patterns in a dark monochrome aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZGlk-vOGW4AghGTKIyUShg5rRzzkUM859JQd4kCUkPkENlnQbG4JSQWMHcQnB4G-yUDAPqMFI1sIbcVp6h8thevXoMQLnyufPdFa10rRFg5UPzUR6B0sHMotMBi-tKveo8Hkpwi-iaK_8SqIIhs4-jB0YcXlpSN5DPl5_rKTEPVWp1LfIVZ-HnQATVnNy72BBn6uHEJ_GDkY2gYoX7od-5s02SP4mlQNf1zk2xFrXnqSq1j5_26XjXnB2Gc0MPg5Prx0-u_E0ko99"/>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="font-mono text-[10px] text-tertiary mb-2 block uppercase">PROJECT_ID: WX_D3</span>
+<h2 class="clash-display text-3xl tracking-tight">Weather App</h2>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-tertiary transition-colors" data-icon="north_east">north_east</span>
+</div>
+<div class="space-y-6 flex-grow">
+<div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-6">
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Role</p>
+<p class="text-sm font-medium">Data Engineer</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Core Stack</p>
+<p class="text-sm font-medium">D3.js, React, OpenWeather</p>
+</div>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Architecture Challenge</p>
+<p class="text-sm text-[#A1A1AA] leading-relaxed">Coordinating complex SVG animations with real-time WebSocket data updates without compromising 60FPS browser performance.</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Impact</p>
+<p class="text-sm font-semibold text-white">Reduced main-thread blocking by <span class="text-tertiary">45%</span> using specialized D3-to-React render reconciliation.</p>
+</div>
+</div>
+</article>
+<!-- Project 03: YouTube Clone -->
+<article class="project-card p-8 md:p-12 flex flex-col group h-full">
+<div class="mb-8 overflow-hidden aspect-video bg-surface-container-lowest">
+<img alt="Video System" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Technical architectural diagram of a video streaming infrastructure showing microservices, CDN nodes, and database clusters" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaOpgQjZW2HfGU-ny2-o2RSr60llJqEmaTsHkSl0m9Ty0g3m-Lw7J4gxK3GBbF2uuFmmizB91Qq5qpIABGeXQKOmnBfarIpVd7HadzewcmChS2VsCB-iKN4NP7MEmWXaPFAP02a5ZVTkaM7bwG29AY71QklKAmaKEdpdT1kMuL_u6_mkLWupWn1C3Q1GdTaMXoShc8h44Bj7ntnN4OMlLSmTnlH-rWUfcgICqo0seXLZQLvuYTT93gpubS7ZnpnzcXbfjgfVw_x3qR"/>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="font-mono text-[10px] text-tertiary mb-2 block uppercase">PROJECT_ID: YT_CLONE</span>
+<h2 class="clash-display text-3xl tracking-tight">YouTube Clone</h2>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-tertiary transition-colors" data-icon="north_east">north_east</span>
+</div>
+<div class="space-y-6 flex-grow">
+<div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-6">
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Role</p>
+<p class="text-sm font-medium">Infrastructure Lead</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Core Stack</p>
+<p class="text-sm font-medium">Next.js, AWS S3, FFmpeg</p>
+</div>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Architecture Challenge</p>
+<p class="text-sm text-[#A1A1AA] leading-relaxed">Orchestrating server-side video transcoding for multiple resolutions using AWS Lambda and FFmpeg.</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Impact</p>
+<p class="text-sm font-semibold text-white">Decreased cold-start video latency by <span class="text-tertiary">30%</span> via adaptive bitrate streaming (HLS).</p>
+</div>
+</div>
+</article>
+<!-- Project 04: AI Forecasting -->
+<article class="project-card p-8 md:p-12 flex flex-col group h-full">
+<div class="mb-8 overflow-hidden aspect-video bg-surface-container-lowest">
+<img alt="Predictive Logic" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Close-up of a high-end server rack with blinking green lights and industrial cooling fans in a dark high-tech environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCQxw6hxWXywoM63-RwygmteI2tx030bh8MVocbh3vFCaXKHTLJzyhEzr2P2uCNUxQsCT0fVZXt_2easnZSDpNQXjPBlbzHcmBogFb-9S1Kas1ghJ6EK1iy7ckOlmd7Ki_XSfZ2X5tDjHiqOq5SG4woKpFuM23pqFywUEpIclO025rP1d-8QLl1rc2hIC7Fv-yYHso1QQTcifOt_4aFgiImMIUmsZ7_9omh4wGh9Z6Hd3FYUSKAXMo47IujrVe2CY99vmAZs5vLOK7"/>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="font-mono text-[10px] text-tertiary mb-2 block uppercase">PROJECT_ID: PREDICT_V3</span>
+<h2 class="clash-display text-3xl tracking-tight">AI Forecasting</h2>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-tertiary transition-colors" data-icon="north_east">north_east</span>
+</div>
+<div class="space-y-6 flex-grow">
+<div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-6">
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Role</p>
+<p class="text-sm font-medium">Backend Architect</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Core Stack</p>
+<p class="text-sm font-medium">Python, TensorFlow, Redis</p>
+</div>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Architecture Challenge</p>
+<p class="text-sm text-[#A1A1AA] leading-relaxed">Designing a distributed caching layer to support high-frequency inference calls on a large-scale neural network model.</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase mb-1">Impact</p>
+<p class="text-sm font-semibold text-white">Successfully predicted market fluctuations with <span class="text-tertiary">89%</span> accuracy on historical test sets.</p>
+</div>
+</div>
+</article>
+</section>
+<!-- Matrix Breadcrumb -->
+<div class="fixed bottom-6 left-6 z-40 hidden md:block">
+<p class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747]">
+                ROOT / <span class="text-tertiary">WORK_MATRIX</span> / PROJECTS_LIST_2024
+            </p>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#050505] w-full py-8 px-6 mt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+<div class="text-[#6FFBBE] font-bold font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest">[SYSTEM_READY] ©2024 TERMINAL_NULL</div>
+<div class="flex gap-8 font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest">
+<a class="text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">GITHUB</a>
+<a class="text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">LINKEDIN</a>
+<a class="text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">SOURCE_CODE</a>
+</div>
+</footer>
+</body></html>

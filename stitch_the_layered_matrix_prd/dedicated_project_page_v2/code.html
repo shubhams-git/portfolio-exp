@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=clash-display" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#050505",
+              "on-primary-container": "#000000",
+              "primary-container": "#d4d4d7",
+              "surface-bright": "#3a3939",
+              "on-tertiary-fixed-variant": "#6ffbbe",
+              "surface-container-low": "#1c1b1b",
+              "on-tertiary-fixed": "#ffffff",
+              "surface": "#0F0F11",
+              "outline-variant": "#474747",
+              "surface-container-high": "#2a2a2a",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-fixed": "#ffffff",
+              "primary-fixed-dim": "#454749",
+              "inverse-primary": "#5d5e61",
+              "secondary-container": "#45464e",
+              "surface-tint": "#c6c6c9",
+              "secondary": "#c6c6cf",
+              "on-secondary": "#1a1b22",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#313030",
+              "tertiary-container": "#00a572",
+              "on-surface": "#e5e2e1",
+              "on-background": "#e5e2e1",
+              "on-secondary-fixed": "#1a1b22",
+              "surface-dim": "#131313",
+              "surface-container-highest": "#353534",
+              "on-secondary-container": "#e2e1eb",
+              "outline": "#919191",
+              "on-tertiary": "#002113",
+              "on-error-container": "#ffdad6",
+              "on-primary": "#1a1c1e",
+              "error-container": "#93000a",
+              "surface-container": "#201f1f",
+              "tertiary-fixed-dim": "#005236",
+              "on-surface-variant": "#c6c6c6",
+              "on-tertiary-container": "#000000",
+              "on-secondary-fixed-variant": "#3a3b42",
+              "primary": "#ffffff",
+              "tertiary": "#6ffbbe",
+              "surface-variant": "#353534",
+              "secondary-fixed-dim": "#aaaab3",
+              "on-error": "#690005",
+              "inverse-surface": "#e5e2e1",
+              "primary-fixed": "#5d5e61",
+              "secondary-fixed": "#c6c6cf",
+              "tertiary-fixed": "#006c49",
+              "on-primary-fixed-variant": "#e2e2e5"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #050505; color: #e5e2e1; font-family: 'Inter', sans-serif; }
+        .clash-display { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { backdrop-filter: blur(8px); background: rgba(15, 15, 17, 0.7); }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #2a2a2a; }
+    </style>
+</head>
+<body class="selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#050505]/70 backdrop-blur-md border-b border-white/10 flex justify-between items-center px-6 py-4 w-full max-w-none">
+<div class="font-['Space_Grotesk'] font-bold text-xl tracking-tighter text-white uppercase">ARCHITECT_OS</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-white border-b border-white pb-1 transition-all duration-200" href="#">WORK</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors transition-all duration-200" href="#">STACK</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors transition-all duration-200" href="#">ABOUT</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors transition-all duration-200" href="#">CONTACT</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white text-xl">terminal</span>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
+<div class="lg:col-span-8">
+<div class="font-mono text-[10px] tracking-[0.3em] text-tertiary mb-6 flex items-center gap-2">
+<span class="w-2 h-2 bg-tertiary"></span>
+                    PROJECT_DEEP_DIVE:001
+                </div>
+<h1 class="clash-display text-6xl md:text-8xl lg:text-9xl text-white leading-[0.85] tracking-tighter uppercase mb-12">
+                    RizzBot<br/>Architecture.
+                </h1>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-end">
+<div class="border-l border-outline-variant/30 pl-8 py-4 space-y-8">
+<div>
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest mb-1">Role</p>
+<p class="font-headline font-semibold text-white uppercase">Full-Stack Architect</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest mb-1">Stack</p>
+<p class="font-headline font-semibold text-white uppercase">MERN, TS, OpenAI</p>
+</div>
+<div>
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest mb-1">Timeline</p>
+<p class="font-headline font-semibold text-white uppercase">Q3 2023</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Narrative Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32">
+<div class="lg:col-span-4">
+<h2 class="font-headline font-bold text-2xl uppercase tracking-tighter text-white">The Challenge</h2>
+<div class="w-12 h-1 bg-white mt-4"></div>
+</div>
+<div class="lg:col-span-8">
+<p class="text-on-surface-variant text-lg leading-relaxed font-light mb-8">
+                    Developing a real-time conversational AI that maintains personality consistency across disparate sessions. The primary bottleneck was latency—reducing the "Time to First Token" (TTFT) while maintaining complex state management in a high-concurrency environment.
+                </p>
+<p class="text-on-surface-variant text-lg leading-relaxed font-light">
+                    The implementation required a custom abstraction layer over OpenAI's streaming API, integrated with a distributed Redis cache for instant context retrieval, ensuring the bot's "memory" felt instantaneous and human-like.
+                </p>
+</div>
+</section>
+<!-- Impact Metrics (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-1 mb-32 bg-outline-variant/10 p-1">
+<div class="bg-surface p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="font-mono text-[10px] text-tertiary">METRIC_01</span>
+<div>
+<div class="text-6xl font-headline font-bold text-white tracking-tighter">420ms</div>
+<div class="font-mono text-[10px] text-outline uppercase tracking-widest mt-2">Avg Time To First Token</div>
+</div>
+</div>
+<div class="bg-surface p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="font-mono text-[10px] text-tertiary">METRIC_02</span>
+<div>
+<div class="text-6xl font-headline font-bold text-white tracking-tighter">99.98%</div>
+<div class="font-mono text-[10px] text-outline uppercase tracking-widest mt-2">System Uptime (Q3)</div>
+</div>
+</div>
+<div class="bg-surface p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="font-mono text-[10px] text-tertiary">METRIC_03</span>
+<div>
+<div class="text-6xl font-headline font-bold text-white tracking-tighter">1.2M</div>
+<div class="font-mono text-[10px] text-outline uppercase tracking-widest mt-2">Daily API Transactions</div>
+</div>
+</div>
+</section>
+<!-- System Architecture Diagram (Abstract/Visual) -->
+<section class="mb-32">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest mb-2">Visual Logic</p>
+<h3 class="font-headline font-bold text-3xl uppercase tracking-tighter text-white">System Topology</h3>
+</div>
+<div class="font-mono text-[10px] text-tertiary">[ENCRYPTED_STREAM_V2]</div>
+</div>
+<div class="relative bg-surface-container-lowest border border-outline-variant/20 p-8 md:p-16 overflow-hidden min-h-[500px] flex items-center justify-center">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#474747 1px, transparent 1px); background-size: 30px 30px;"></div>
+<div class="relative z-10 w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+<!-- Edge Tier -->
+<div class="border border-white/10 p-6 bg-surface/80 backdrop-blur-md relative">
+<div class="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-tertiary"></div>
+<p class="font-mono text-[10px] text-tertiary mb-4 tracking-tighter">01. EDGE_GATEWAY</p>
+<div class="space-y-3">
+<div class="h-1 bg-white/20 w-full"></div>
+<div class="h-1 bg-white/40 w-3/4"></div>
+<div class="h-1 bg-white/10 w-5/6"></div>
+</div>
+</div>
+<!-- Core Tier -->
+<div class="md:col-span-1 flex justify-center relative">
+<div class="w-full h-[1px] bg-outline-variant/30 absolute top-1/2 -translate-y-1/2 left-[-50%] z-0 hidden md:block"></div>
+<div class="w-48 h-48 border border-tertiary/40 rounded-full flex items-center justify-center bg-surface-container-lowest z-10 animate-pulse">
+<div class="w-32 h-32 border border-tertiary flex items-center justify-center text-center p-4">
+<p class="font-mono text-[10px] text-white">NEURAL_REASONING_ENGINE</p>
+</div>
+</div>
+<div class="w-full h-[1px] bg-outline-variant/30 absolute top-1/2 -translate-y-1/2 right-[-50%] z-0 hidden md:block"></div>
+</div>
+<!-- Data Tier -->
+<div class="border border-white/10 p-6 bg-surface/80 backdrop-blur-md relative">
+<div class="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-tertiary"></div>
+<p class="font-mono text-[10px] text-tertiary mb-4 tracking-tighter">03. PERSISTENCE_LAYER</p>
+<div class="grid grid-cols-4 gap-2">
+<div class="aspect-square bg-white/10"></div>
+<div class="aspect-square bg-tertiary/40"></div>
+<div class="aspect-square bg-white/10"></div>
+<div class="aspect-square bg-white/10"></div>
+<div class="aspect-square bg-white/10"></div>
+<div class="aspect-square bg-white/10"></div>
+<div class="aspect-square bg-tertiary/40"></div>
+<div class="aspect-square bg-white/10"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Code Snippet Section -->
+<section class="mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4">
+<h3 class="font-headline font-bold text-3xl uppercase tracking-tighter text-white mb-6">Stream Implementation</h3>
+<p class="text-on-surface-variant font-light mb-8">
+                        The core handler for chunking OpenAI responses and piping them through WebSockets while simultaneously updating the vector embedding store.
+                    </p>
+<div class="p-6 bg-surface-container-low border-l-2 border-tertiary">
+<p class="font-mono text-xs text-on-surface-variant leading-relaxed italic">
+                            "The trick was ensuring the cache-ahead logic didn't outrun the stream's natural cadence."
+                        </p>
+</div>
+</div>
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-sm overflow-hidden">
+<div class="bg-surface-container-high px-4 py-2 border-b border-outline-variant/20 flex justify-between items-center">
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-red-500/50"></div>
+<div class="w-2 h-2 rounded-full bg-yellow-500/50"></div>
+<div class="w-2 h-2 rounded-full bg-green-500/50"></div>
+</div>
+<span class="font-mono text-[10px] text-outline">rizzbot_stream_handler.ts</span>
+</div>
+<div class="p-6 font-mono text-xs overflow-x-auto leading-6">
+<pre class="text-[#A1A1AA]"><span class="text-tertiary">async</span> <span class="text-white">function</span> <span class="text-blue-400">handleStream</span>(payload: RequestPayload) {
+  <span class="text-tertiary">const</span> stream = <span class="text-tertiary">await</span> openai.chat.completions.create({
+    model: <span class="text-orange-300">"gpt-4-turbo"</span>,
+    messages: payload.context,
+    stream: <span class="text-tertiary">true</span>,
+  });
+
+  <span class="text-[#474747]">/* Initializing atomic buffer for latency reduction */</span>
+  <span class="text-tertiary">let</span> buffer = <span class="text-orange-300">""</span>;
+  
+  <span class="text-tertiary">for await</span> (<span class="text-tertiary">const</span> chunk <span class="text-tertiary">of</span> stream) {
+    <span class="text-tertiary">const</span> content = chunk.choices[<span class="text-purple-400">0</span>]?.delta?.content || <span class="text-orange-300">""</span>;
+    buffer += content;
+    
+    <span class="text-[#474747]">//@ts-ignore - Distributed socket dispatch</span>
+    socket.emit(<span class="text-orange-300">"stream_chunk"</span>, { 
+      id: payload.id, 
+      token: content 
+    });
+  }
+
+  <span class="text-tertiary">await</span> redis.setex(<span class="text-orange-300">`ctx:<span class="text-white">${payload.id}</span>`</span>, <span class="text-purple-400">3600</span>, buffer);
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Image Insert -->
+<section class="mb-32">
+<div class="relative w-full aspect-[21/9] overflow-hidden">
+<img alt="System Hardware" class="w-full h-full object-cover grayscale opacity-50" data-alt="Close-up of futuristic server hardware with glowing blue and green fiber optic cables in a dark high-tech data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlrw6pCuBKY-F3mOR2KdGBUiSqFeLjheOEODWdRSsHJ01BWS62AQ8KZMaRcUMG3Ojg2-WLXV0g8GyRGarruFCH_aDPccf1WGW3mZ5_hiAsZbPkrb7fQuL9i21MlLeFGn4WjrtUahZyhMO_F-WsidSD-UqgMPpa5isxp1bGBeZviwhh8fUP0GhZztibhaSi7aDc8wA-lUvZzBCrsYdaxWE6rISRIJzs2qiD-MvDqP8q9gvQlFBCLJYrpBqfAWOdxKVrOXm5R8mLP1sj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+</section>
+<!-- Project Navigation -->
+<nav class="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-outline-variant/20 pt-12">
+<a class="group w-full md:w-auto px-8 py-6 border border-outline-variant/30 hover:border-white transition-all duration-300 flex items-center justify-between gap-12" href="#">
+<div class="flex flex-col">
+<span class="font-mono text-[10px] text-outline mb-1 uppercase tracking-widest">Previous Project</span>
+<span class="font-headline font-bold text-white uppercase tracking-tighter">NEURAL_DASHBOARD</span>
+</div>
+<span class="material-symbols-outlined text-white transition-transform group-hover:-translate-x-2">arrow_back</span>
+</a>
+<div class="hidden md:block h-[1px] flex-grow bg-outline-variant/20 mx-8"></div>
+<a class="group w-full md:w-auto px-8 py-6 border border-outline-variant/30 hover:border-white transition-all duration-300 flex items-center justify-between gap-12 text-right" href="#">
+<span class="material-symbols-outlined text-white transition-transform group-hover:translate-x-2">arrow_forward</span>
+<div class="flex flex-col">
+<span class="font-mono text-[10px] text-outline mb-1 uppercase tracking-widest">Next Project</span>
+<span class="font-headline font-bold text-white uppercase tracking-tighter">QUANT_REASONER</span>
+</div>
+</a>
+</nav>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-6 mt-20 border-t border-white/5 bg-[#050505] flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+<div class="text-[#6FFBBE] font-bold font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest">[SYSTEM_READY] ©2024 TERMINAL_NULL</div>
+<div class="flex gap-8">
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">GITHUB</a>
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">LINKEDIN</a>
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">SOURCE_CODE</a>
+</div>
+</footer>
+<!-- Matrix Breadcrumb Anchor -->
+<div class="fixed bottom-6 left-6 z-50 pointer-events-none hidden lg:block">
+<div class="font-mono text-[10px] text-outline bg-background/50 backdrop-blur-sm px-2 py-1 uppercase tracking-widest">
+            ROOT / PROJECTS / 01_RIZZBOT_ARCH
+        </div>
+</div>
+</body></html>

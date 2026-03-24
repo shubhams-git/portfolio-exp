@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARCHITECT_OS | TECHNICAL_STACK</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#050505",
+              "on-primary-container": "#000000",
+              "primary-container": "#d4d4d7",
+              "surface-bright": "#3a3939",
+              "on-tertiary-fixed-variant": "#6ffbbe",
+              "surface-container-low": "#1c1b1b",
+              "on-tertiary-fixed": "#ffffff",
+              "surface": "#131313",
+              "outline-variant": "#474747",
+              "surface-container-high": "#2a2a2a",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-fixed": "#ffffff",
+              "primary-fixed-dim": "#454749",
+              "inverse-primary": "#5d5e61",
+              "secondary-container": "#45464e",
+              "surface-tint": "#c6c6c9",
+              "secondary": "#c6c6cf",
+              "on-secondary": "#1a1b22",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#313030",
+              "tertiary-container": "#00a572",
+              "on-surface": "#e5e2e1",
+              "on-background": "#e5e2e1",
+              "on-secondary-fixed": "#1a1b22",
+              "surface-dim": "#131313",
+              "surface-container-highest": "#353534",
+              "on-secondary-container": "#e2e1eb",
+              "outline": "#919191",
+              "on-tertiary": "#002113",
+              "on-error-container": "#ffdad6",
+              "on-primary": "#1a1c1e",
+              "error-container": "#93000a",
+              "surface-container": "#201f1f",
+              "tertiary-fixed-dim": "#005236",
+              "on-surface-variant": "#c6c6c6",
+              "on-tertiary-container": "#000000",
+              "on-secondary-fixed-variant": "#3a3b42",
+              "primary": "#ffffff",
+              "tertiary": "#6ffbbe",
+              "surface-variant": "#353534",
+              "secondary-fixed-dim": "#aaaab3",
+              "on-error": "#690005",
+              "inverse-surface": "#e5e2e1",
+              "primary-fixed": "#5d5e61",
+              "secondary-fixed": "#c6c6cf",
+              "tertiary-fixed": "#006c49",
+              "on-primary-fixed-variant": "#e2e2e5"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .matrix-grid {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .tech-card:hover .glow-effect {
+            opacity: 1;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#050505]/70 backdrop-blur-md border-b border-white/10 flex justify-between items-center px-6 py-4 w-full max-w-none">
+<div class="font-['Clash_Display'] font-bold text-xl tracking-tighter text-white">ARCHITECT_OS</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors" href="#">WORK</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-white border-b border-white pb-1" href="#">STACK</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors" href="#">ABOUT</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors" href="#">CONTACT</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-white hover:bg-white/5 transition-all duration-200 p-2 active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 min-h-screen px-6 md:px-12 lg:px-24">
+<!-- Section Header -->
+<header class="mb-16">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="font-mono text-tertiary text-sm tracking-widest">[02]</span>
+<h1 class="font-headline font-bold text-5xl md:text-7xl tracking-tighter text-white uppercase">
+                    TECHNICAL<br/>ARSENAL
+                </h1>
+</div>
+<div class="w-full h-px bg-white/10"></div>
+<div class="mt-4 flex justify-between items-center">
+<p class="font-mono text-[10px] uppercase tracking-widest text-outline">System Capability Matrix v4.0.1</p>
+<p class="font-mono text-[10px] uppercase tracking-widest text-tertiary animate-pulse">Status: Operational</p>
+</div>
+</header>
+<!-- 5-Column Technical Stack Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 border-l border-t border-white/10 relative overflow-hidden">
+<!-- Background Layer -->
+<div class="absolute inset-0 matrix-grid pointer-events-none opacity-20"></div>
+<!-- Column 01: FRONTEND -->
+<div class="tech-card group border-r border-b border-white/10 p-8 flex flex-col min-h-[400px] relative bg-background hover:bg-surface-container-low transition-colors duration-500">
+<div class="glow-effect absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 transition-opacity duration-700 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-12">
+<span class="font-mono text-[10px] text-outline group-hover:text-tertiary transition-colors">/01</span>
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors" data-icon="layers">layers</span>
+</div>
+<h3 class="font-headline font-bold text-xl tracking-tight text-white mb-8 group-hover:translate-x-1 transition-transform">FRONTEND</h3>
+<ul class="space-y-4 font-mono text-sm">
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-tertiary"></span> React
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> TypeScript
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Next.js
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Tailwind CSS
+                    </li>
+</ul>
+</div>
+<!-- Column 02: BACKEND -->
+<div class="tech-card group border-r border-b border-white/10 p-8 flex flex-col min-h-[400px] relative bg-background hover:bg-surface-container-low transition-colors duration-500">
+<div class="glow-effect absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 transition-opacity duration-700 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-12">
+<span class="font-mono text-[10px] text-outline group-hover:text-tertiary transition-colors">/02</span>
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors" data-icon="database">database</span>
+</div>
+<h3 class="font-headline font-bold text-xl tracking-tight text-white mb-8 group-hover:translate-x-1 transition-transform">BACKEND</h3>
+<ul class="space-y-4 font-mono text-sm">
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Node.js
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Python
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Express
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> FastAPI
+                    </li>
+</ul>
+</div>
+<!-- Column 03: CLOUD & INFRA -->
+<div class="tech-card group border-r border-b border-white/10 p-8 flex flex-col min-h-[400px] relative bg-background hover:bg-surface-container-low transition-colors duration-500">
+<div class="glow-effect absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 transition-opacity duration-700 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-12">
+<span class="font-mono text-[10px] text-outline group-hover:text-tertiary transition-colors">/03</span>
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors" data-icon="cloud">cloud</span>
+</div>
+<h3 class="font-headline font-bold text-xl tracking-tight text-white mb-8 group-hover:translate-x-1 transition-transform uppercase leading-tight">Cloud &amp;<br/>Infra</h3>
+<ul class="space-y-4 font-mono text-sm">
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> AWS
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Azure
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Docker
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Git
+                    </li>
+</ul>
+</div>
+<!-- Column 04: AI & INTEGRATIONS -->
+<div class="tech-card group border-r border-b border-white/10 p-8 flex flex-col min-h-[400px] relative bg-background hover:bg-surface-container-low transition-colors duration-500">
+<div class="glow-effect absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 transition-opacity duration-700 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-12">
+<span class="font-mono text-[10px] text-outline group-hover:text-tertiary transition-colors">/04</span>
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline font-bold text-xl tracking-tight text-white mb-8 group-hover:translate-x-1 transition-transform uppercase leading-tight">AI &amp;<br/>Integrations</h3>
+<ul class="space-y-4 font-mono text-sm">
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> OpenAI API
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> Prompt Eng.
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> MCP
+                    </li>
+</ul>
+</div>
+<!-- Column 05: DATABASES -->
+<div class="tech-card group border-r border-b border-white/10 p-8 flex flex-col min-h-[400px] relative bg-background hover:bg-surface-container-low transition-colors duration-500">
+<div class="glow-effect absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 transition-opacity duration-700 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-12">
+<span class="font-mono text-[10px] text-outline group-hover:text-tertiary transition-colors">/05</span>
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-colors" data-icon="storage">storage</span>
+</div>
+<h3 class="font-headline font-bold text-xl tracking-tight text-white mb-8 group-hover:translate-x-1 transition-transform">DATABASES</h3>
+<ul class="space-y-4 font-mono text-sm">
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> MongoDB
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> SQL
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant group-hover:text-on-surface">
+<span class="w-1.5 h-1.5 bg-outline-variant group-hover:bg-tertiary"></span> PostgreSQL
+                    </li>
+</ul>
+</div>
+</section>
+<!-- Decorative Info Strip -->
+<div class="mt-20 flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-md">
+<p class="font-body text-on-surface-variant text-sm leading-relaxed border-l-2 border-tertiary pl-6">
+                    Engineering philosophy rooted in absolute precision. Architecting scalable digital infrastructures with high-density code and low-latency performance at the core of every deployment.
+                </p>
+</div>
+<!-- Technical Specs Display -->
+<div class="bg-surface-container-lowest border border-white/5 p-6 min-w-[300px]">
+<div class="flex justify-between mb-4 border-b border-white/5 pb-2">
+<span class="font-mono text-[10px] text-outline uppercase tracking-widest">Compiler</span>
+<span class="font-mono text-[10px] text-white uppercase tracking-widest">TS_ENGINE_V8</span>
+</div>
+<div class="flex justify-between mb-4 border-b border-white/5 pb-2">
+<span class="font-mono text-[10px] text-outline uppercase tracking-widest">Architecture</span>
+<span class="font-mono text-[10px] text-white uppercase tracking-widest">Serverless_Lambda</span>
+</div>
+<div class="flex justify-between">
+<span class="font-mono text-[10px] text-outline uppercase tracking-widest">Uptime</span>
+<span class="font-mono text-[10px] text-tertiary uppercase tracking-widest">99.998%</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-6 mt-20 border-t border-white/5 bg-[#050505] flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+<div class="text-[#6FFBBE] font-bold font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest">
+            [SYSTEM_READY] ©2024 TERMINAL_NULL
+        </div>
+<div class="flex gap-6">
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">GITHUB</a>
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">LINKEDIN</a>
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">SOURCE_CODE</a>
+</div>
+<div class="font-mono text-[10px] text-[#474747] uppercase tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            SYNCED_WITH_MAIN_NODE
+        </div>
+</footer>
+<!-- Breadcrumb Persistent UI -->
+<div class="fixed bottom-6 left-6 z-40 hidden md:block">
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest bg-black/50 backdrop-blur-sm px-3 py-1">
+            ROOT / PROJECTS / <span class="text-white">02_TECHNICAL_ARSENAL</span>
+</p>
+</div>
+</body></html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Clash+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#050505",
+              "on-primary-container": "#000000",
+              "primary-container": "#d4d4d7",
+              "surface-bright": "#3a3939",
+              "on-tertiary-fixed-variant": "#6ffbbe",
+              "surface-container-low": "#1c1b1b",
+              "on-tertiary-fixed": "#ffffff",
+              "surface": "#050505",
+              "outline-variant": "#474747",
+              "surface-container-high": "#2a2a2a",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-fixed": "#ffffff",
+              "primary-fixed-dim": "#454749",
+              "inverse-primary": "#5d5e61",
+              "secondary-container": "#45464e",
+              "surface-tint": "#c6c6c9",
+              "secondary": "#c6c6cf",
+              "on-secondary": "#1a1b22",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#313030",
+              "tertiary-container": "#00a572",
+              "on-surface": "#e5e2e1",
+              "on-background": "#e5e2e1",
+              "on-secondary-fixed": "#1a1b22",
+              "surface-dim": "#131313",
+              "surface-container-highest": "#353534",
+              "on-secondary-container": "#e2e1eb",
+              "outline": "#919191",
+              "on-tertiary": "#002113",
+              "on-error-container": "#ffdad6",
+              "on-primary": "#1a1c1e",
+              "error-container": "#93000a",
+              "surface-container": "#201f1f",
+              "tertiary-fixed-dim": "#005236",
+              "on-surface-variant": "#c6c6c6",
+              "on-tertiary-container": "#000000",
+              "on-secondary-fixed-variant": "#3a3b42",
+              "primary": "#ffffff",
+              "tertiary": "#6ffbbe",
+              "surface-variant": "#353534",
+              "secondary-fixed-dim": "#aaaab3",
+              "on-error": "#690005",
+              "inverse-surface": "#e5e2e1",
+              "primary-fixed": "#5d5e61",
+              "secondary-fixed": "#c6c6cf",
+              "tertiary-fixed": "#006c49",
+              "on-primary-fixed-variant": "#e2e2e5"
+            },
+            fontFamily: {
+              "headline": ["Clash Display", "sans-serif"],
+              "body": ["Switzer", "Inter", "sans-serif"],
+              "label": ["Space Grotesk", "sans-serif"],
+              "mono": ["JetBrains Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 bg-[#050505]/70 backdrop-blur-md text-white border-b border-white/10 flex justify-between items-center px-6 py-4 w-full max-w-none">
+<div class="font-['Clash_Display'] font-bold text-xl tracking-tighter text-white">ARCHITECT_OS</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors" href="#">WORK</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors" href="#">STACK</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors" href="#">ABOUT</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-sm text-[#A1A1AA] hover:text-white transition-colors" href="#">CONTACT</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hover:bg-white/5 transition-all duration-200 p-2 active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</button>
+</div>
+</header>
+<!-- Main Content Background (Mocking the page behind the modal) -->
+<main class="min-h-screen pt-24 px-6 grid grid-cols-1 md:grid-cols-3 gap-6 opacity-20 pointer-events-none">
+<div class="aspect-square bg-surface-container-low border-l border-outline-variant/20 p-8">
+<div class="text-4xl font-headline font-bold mb-4">NEURAL_NET_V1</div>
+<div class="text-sm text-on-surface-variant font-mono">01 // PROJECT</div>
+</div>
+<div class="aspect-square bg-surface-container-low border-l border-outline-variant/20 p-8">
+<div class="text-4xl font-headline font-bold mb-4">CYBER_PHAGE</div>
+<div class="text-sm text-on-surface-variant font-mono">02 // PROJECT</div>
+</div>
+<div class="aspect-square bg-surface-container-low border-l border-outline-variant/20 p-8">
+<div class="text-4xl font-headline font-bold mb-4">VOID_REACH</div>
+<div class="text-sm text-on-surface-variant font-mono">03 // PROJECT</div>
+</div>
+</main>
+<!-- Quick Preview Modal Overlay -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-12 bg-background/80 backdrop-blur-sm">
+<!-- The Modal Container -->
+<div class="relative w-full max-w-6xl aspect-video md:aspect-auto bg-surface-container-lowest/60 backdrop-blur-[12px] border border-outline-variant/30 flex flex-col md:flex-row shadow-[0_40px_80px_rgba(0,0,0,0.5)]">
+<!-- Left Column: Technical Deep-Dive -->
+<div class="flex-1 p-8 md:p-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-outline-variant/20">
+<div>
+<div class="font-mono text-[10px] tracking-[0.2em] text-tertiary mb-8">PROJECT PREVIEW // 01</div>
+<h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-8 text-white leading-none">
+                        SYNAPSE<br/>ROUTING_OS
+                    </h2>
+<div class="space-y-8 max-w-md">
+<section>
+<h3 class="font-label text-[10px] tracking-widest text-on-surface-variant mb-3 uppercase">Problem Scope</h3>
+<p class="text-on-surface leading-relaxed font-light">
+                                Standard packet distribution architectures fail at scale when handling non-deterministic edge-case requests, leading to 40% increased jitter in distributed neural clusters.
+                            </p>
+</section>
+<section>
+<h3 class="font-label text-[10px] tracking-widest text-on-surface-variant mb-3 uppercase">Architectural Solution</h3>
+<p class="text-on-surface leading-relaxed font-light">
+                                Implementing a custom layer-4 switching protocol that utilizes predictive heuristics to pre-allocate bandwidth based on historical traffic patterns.
+                            </p>
+</section>
+</div>
+</div>
+<div class="mt-12">
+<button class="bg-tertiary text-on-tertiary px-8 py-4 font-label font-bold text-sm tracking-tight flex items-center gap-3 hover:bg-white transition-colors group">
+                        VIEW TECHNICAL DEEP-DIVE
+                        <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Metrics & Stack -->
+<div class="w-full md:w-[400px] p-8 md:p-12 bg-white/[0.02] flex flex-col gap-12">
+<!-- Close Button -->
+<button class="absolute top-6 right-6 text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<!-- Core Metrics -->
+<section>
+<h3 class="font-label text-[10px] tracking-widest text-on-surface-variant mb-6 uppercase">Core Performance Metrics</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="font-mono text-xs text-on-surface-variant">AVERAGE_LATENCY</span>
+<span class="font-headline text-2xl font-bold text-tertiary">0.42ms</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="font-mono text-xs text-on-surface-variant">MAX_CONNS_S</span>
+<span class="font-headline text-2xl font-bold text-white">4.2M+</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<span class="font-mono text-xs text-on-surface-variant">FAULT_TOLERANCE</span>
+<span class="font-headline text-2xl font-bold text-white">99.999%</span>
+</div>
+</div>
+</section>
+<!-- Tech Stack -->
+<section>
+<h3 class="font-label text-[10px] tracking-widest text-on-surface-variant mb-6 uppercase">Applied Stack</h3>
+<div class="flex flex-wrap gap-2">
+<span class="font-mono text-[11px] bg-surface-container-high text-on-surface-variant px-3 py-1.5 border border-outline-variant/20 uppercase tracking-tighter">Rust_Lang</span>
+<span class="font-mono text-[11px] bg-surface-container-high text-on-surface-variant px-3 py-1.5 border border-outline-variant/20 uppercase tracking-tighter">gRPC</span>
+<span class="font-mono text-[11px] bg-surface-container-high text-on-surface-variant px-3 py-1.5 border border-outline-variant/20 uppercase tracking-tighter">Kubernetes</span>
+<span class="font-mono text-[11px] bg-surface-container-high text-on-surface-variant px-3 py-1.5 border border-outline-variant/20 uppercase tracking-tighter">eBPF</span>
+<span class="font-mono text-[11px] bg-surface-container-high text-on-surface-variant px-3 py-1.5 border border-outline-variant/20 uppercase tracking-tighter">Prometheus</span>
+</div>
+</section>
+<!-- Image/Visual Hint -->
+<div class="mt-auto relative aspect-video w-full overflow-hidden bg-surface-container-high">
+<img alt="Abstract digital network architecture with glowing nodes and data streams" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500 cursor-crosshair" data-alt="abstract digital network visualization with glowing green neon data streams on a deep charcoal background tech-noir style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdfoNZsBviuBDkiALbp35SCiIn3xIptpRxiETYYbqoUNOXkGY2R6tacB1K7CZwnk3MqULevUPTOQ2M-eXpSJzdIHUS6Rs4cHBjiWmAA1XTE4b3Gg-WmqEDraSqoWU6ZGOGaXxr6w9_2MZfg3DkFFUhoUBUCugtKvyXMX00K132MMvzdA9UK0I6zPvwT64wvpEzx9Fw-MHfAQOm0OxuFKRT0bbigTjN-b1y59ZIE2PHaj-_kt5WbQw-yhOpEf_1Q-7LUvd52cO1c7jj"/>
+<div class="absolute inset-0 border border-white/5 pointer-events-none"></div>
+</div>
+</div>
+</div>
+<!-- Matrix Breadcrumb Anchor -->
+<div class="fixed bottom-8 left-8 font-mono text-[10px] tracking-widest text-on-tertiary-fixed-variant flex items-center gap-4">
+<span class="opacity-50">ROOT / WORK /</span>
+<span>01_SYNAPSE_OS</span>
+<span class="animate-pulse bg-tertiary w-1.5 h-3 ml-2"></span>
+</div>
+</div>
+<!-- Footer from JSON -->
+<footer class="w-full py-8 px-6 mt-20 border-t border-white/5 bg-[#050505] flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+<div class="text-[#6FFBBE] font-bold font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest">TERMINAL_NULL</div>
+<div class="flex gap-6">
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">GITHUB</a>
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">LINKEDIN</a>
+<a class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747] hover:text-white transition-colors cursor-crosshair" href="#">SOURCE_CODE</a>
+</div>
+<div class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#474747]">[SYSTEM_READY] ©2024 TERMINAL_NULL</div>
+</footer>
+</body></html>
