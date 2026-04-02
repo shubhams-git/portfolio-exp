@@ -13,7 +13,10 @@ export const portfolioContent: PortfolioContent = {
     lastName: "Sharma",
     role: "Full-Stack Developer",
     location: "Melbourne, VIC",
+    timezone: "Australia/Sydney",
     status: "Open to new opportunities",
+    availabilityNote:
+      "Best fit for product engineering, full-stack delivery, practical AI integrations, and backend-heavy web systems.",
     valueProposition:
       "Full-stack developer building product-focused applications across React, Node.js, Python, cloud platforms, and practical AI systems.",
     introMediaUrl,
@@ -51,10 +54,23 @@ export const portfolioContent: PortfolioContent = {
         "Maintaining responsive multi-turn conversation flows while keeping server-side orchestration and state handling simple enough to ship reliably.",
       impact:
         "Delivered a credible AI product case study that proves practical full-stack integration across UI, API, and model workflows.",
+      proofPoints: [
+        "Multi-turn orchestration shaped as a recruiter-readable product.",
+        "Typed client and backend flow instead of prompt-wrapper theatrics.",
+        "Case-study framing that shows UI, API, and AI layers together.",
+      ],
+      deliverySignals: [
+        { label: "Mode", value: "Full-stack AI", detail: "UI + orchestration + API delivery" },
+        { label: "Focus", value: "Product legibility", detail: "Built to read clearly in interviews" },
+        { label: "Surface", value: "MERN / TS", detail: "Interactive interface with backend control" },
+      ],
+      featured: true,
       visual: {
         assetUrl: rizzbotVisualUrl,
         alt: "Dark orchestration panel showing a conversational AI interface with layered cards and metrics",
         tone: "signal",
+        objectPosition: "50% 44%",
+        zoom: 1.04,
       },
       preview: {
         title: "Conversational product system with practical AI orchestration.",
@@ -131,10 +147,22 @@ export const portfolioContent: PortfolioContent = {
         "Balancing interactive visualization with a rendering strategy that stays performant across common devices and screen sizes.",
       impact:
         "Produced a technical showcase that combines interface craft, API integration, and data presentation in one product narrative.",
+      proofPoints: [
+        "Turned dense weather feeds into a calmer visual hierarchy.",
+        "Kept charting interactive without tipping into dashboard clutter.",
+        "Made API-driven rendering feel responsive and lightweight.",
+      ],
+      deliverySignals: [
+        { label: "Mode", value: "Frontend + data viz", detail: "React surface with D3 rendering" },
+        { label: "Focus", value: "Clarity under density", detail: "Readable chart behavior" },
+        { label: "Surface", value: "FastAPI / D3", detail: "API-fed visual system" },
+      ],
       visual: {
         assetUrl: weatherVisualUrl,
         alt: "Weather analytics panel with chart rails and a forecast curve inside a dark dashboard layout",
         tone: "cool",
+        objectPosition: "50% 42%",
+        zoom: 1.08,
       },
       preview: {
         title: "Weather data translated into a readable visual system.",
@@ -210,10 +238,22 @@ svg.append("path")
         "Structuring the application so data processing, model inference, and API delivery stay understandable and deployable.",
       impact:
         "Extends the portfolio beyond CRUD and frontend polish into model-backed systems and cloud-hosted delivery.",
+      proofPoints: [
+        "Moved forecasting logic out of notebook territory into a deployable service.",
+        "Wrapped model output in an application layer that people can inspect.",
+        "Showed backend and cloud delivery discipline beyond frontend polish.",
+      ],
+      deliverySignals: [
+        { label: "Mode", value: "Applied AI backend", detail: "Service, inference, and delivery" },
+        { label: "Focus", value: "Deployment readiness", detail: "Clear API boundary around ML output" },
+        { label: "Surface", value: "Python / Azure", detail: "Model-backed application layer" },
+      ],
       visual: {
         assetUrl: forecastingVisualUrl,
         alt: "Forecasting surface with radial grid lines, trend indicators, and a model output panel",
         tone: "warm",
+        objectPosition: "50% 46%",
+        zoom: 1.03,
       },
       preview: {
         title: "Model-backed forecasting exposed through a usable application layer.",
@@ -275,11 +315,46 @@ svg.append("path")
     },
   ],
   technicalStack: [
-    { id: "01", title: "Frontend", items: ["React", "TypeScript", "Next.js", "Tailwind CSS"] },
-    { id: "02", title: "Backend", items: ["Node.js", "Python", "Express", "FastAPI"] },
-    { id: "03", title: "Cloud & Infra", items: ["AWS", "Azure", "Docker", "Git"] },
-    { id: "04", title: "AI & Integrations", items: ["OpenAI API", "Prompt Engineering", "MCP"] },
-    { id: "05", title: "Databases", items: ["MongoDB", "SQL", "PostgreSQL"] },
+    {
+      id: "01",
+      title: "Frontend",
+      summary: "Interfaces that read clearly, move with restraint, and stay maintainable under pressure.",
+      signal: "UI systems / interaction craft",
+      evidence: "Portfolio surfaces, React interfaces, and recruiter-readable product framing.",
+      items: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    },
+    {
+      id: "02",
+      title: "Backend",
+      summary: "Typed service layers and API boundaries that keep product logic explicit.",
+      signal: "Services / contracts / orchestration",
+      evidence: "Express, FastAPI, and Python-backed delivery across product-facing systems.",
+      items: ["Node.js", "Python", "Express", "FastAPI"],
+    },
+    {
+      id: "03",
+      title: "Cloud & Infra",
+      summary: "Deployment thinking that keeps systems practical instead of purely conceptual.",
+      signal: "Delivery / portability / tooling",
+      evidence: "AWS, Azure, Docker, and Git integrated into day-to-day product work.",
+      items: ["AWS", "Azure", "Docker", "Git"],
+    },
+    {
+      id: "04",
+      title: "AI & Integrations",
+      summary: "Applied AI work anchored in workflow design, not novelty demos.",
+      signal: "LLM integration / MCP / prompts",
+      evidence: "OpenAI-backed projects, orchestration patterns, and MCP-connected systems.",
+      items: ["OpenAI API", "Prompt Engineering", "MCP"],
+    },
+    {
+      id: "05",
+      title: "Databases",
+      summary: "Persistence layers chosen for product fit, not checkbox breadth.",
+      signal: "Data shape / storage choices",
+      evidence: "MongoDB, SQL, and PostgreSQL used where system boundaries demanded them.",
+      items: ["MongoDB", "SQL", "PostgreSQL"],
+    },
   ],
   experience: [
     {
@@ -327,14 +402,6 @@ svg.append("path")
       target: "_blank",
       rel: "noreferrer",
       note: "LinkedIn profile",
-    },
-    {
-      label: "Source Code",
-      href: "https://github.com/shubhams-git/portfolio-exp",
-      kind: "external",
-      target: "_blank",
-      rel: "noreferrer",
-      note: "Portfolio repository",
     },
   ],
 };

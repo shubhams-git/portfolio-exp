@@ -1,82 +1,100 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap");
 @import url("https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=switzer@400,500&display=swap");
+@import "tailwindcss";
 
-:root {
+@theme {
   --font-display: "Clash Display", "Times New Roman", serif;
   --font-body: "Switzer", "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "Consolas", monospace;
+
   --color-background: #050505;
   --color-surface: #0f0f11;
   --color-surface-raised: #141417;
+  --color-surface-glass: rgba(16, 16, 18, 0.72);
   --color-text: #ffffff;
   --color-text-muted: #a1a1aa;
   --color-text-soft: #7c7c86;
   --color-grid: #27272a;
   --color-grid-strong: #3f3f46;
-  --color-accent: #e4e4e7;
-  --color-accent-soft: #d4d4d8;
-  color: var(--color-text);
-  background: var(--color-background);
-  font-family: var(--font-body);
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-accent: #6ffbbe;
+  --color-accent-soft: #c9ffe8;
+  --color-accent-deep: #28d992;
+
+  --shadow-glow: 0 0 0 1px rgba(111, 251, 190, 0.14), 0 20px 80px rgba(0, 0, 0, 0.35);
+  --shadow-panel: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@layer base {
+  :root {
+    color: var(--color-text);
+    background:
+      radial-gradient(circle at top, rgba(111, 251, 190, 0.08), transparent 24rem),
+      radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.05), transparent 18rem),
+      var(--color-background);
+    color-scheme: dark;
+    font-family: var(--font-body);
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  min-width: 320px;
-  margin: 0;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 32rem),
-    var(--color-background);
-  color: var(--color-text);
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-body,
-button,
-input,
-textarea {
-  font-family: var(--font-body);
-}
+  body {
+    min-width: 320px;
+    margin: 0;
+    background:
+      radial-gradient(circle at top, rgba(111, 251, 190, 0.06), transparent 32rem),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 28%),
+      var(--color-background);
+    color: var(--color-text);
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  body,
+  button,
+  input,
+  textarea {
+    font-family: var(--font-body);
+  }
 
-button,
-input,
-textarea {
-  font: inherit;
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-img {
-  display: block;
-  max-width: 100%;
-}
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
 
-p {
-  margin: 0;
-}
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+  }
 
-#root {
-  min-height: 100vh;
-}
+  p {
+    margin: 0;
+  }
 
-::selection {
-  background: var(--color-accent);
-  color: var(--color-background);
+  #root {
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-background);
+  }
 }

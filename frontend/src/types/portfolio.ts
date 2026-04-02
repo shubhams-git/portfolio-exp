@@ -22,6 +22,7 @@ export type HeroAction = {
 export type ProjectMetric = {
   label: string;
   value: string;
+  detail?: string;
 };
 
 export type ProjectPreview = {
@@ -54,6 +55,8 @@ export type ProjectVisualAsset = {
   assetUrl: string;
   alt: string;
   tone: "neutral" | "cool" | "warm" | "signal";
+  objectPosition?: string;
+  zoom?: number;
 };
 
 export type Project = {
@@ -67,6 +70,9 @@ export type Project = {
   coreStack: string[];
   architectureChallenge: string;
   impact: string;
+  proofPoints: string[];
+  deliverySignals: ProjectMetric[];
+  featured?: boolean;
   preview: ProjectPreview;
   caseStudy: ProjectCaseStudy;
   visual: ProjectVisualAsset;
@@ -75,6 +81,9 @@ export type Project = {
 export type TechCategory = {
   id: string;
   title: string;
+  summary: string;
+  signal: string;
+  evidence: string;
   items: string[];
 };
 
@@ -97,7 +106,9 @@ export type PortfolioContent = {
     lastName: string;
     role: string;
     location: string;
+    timezone: string;
     status: string;
+    availabilityNote: string;
     valueProposition: string;
     introMediaUrl?: string;
   };

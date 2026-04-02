@@ -1,6 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-
-import "./App.css";
+import { BackgroundInteractionLayer } from "@/components/BackgroundInteractionLayer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -11,16 +10,23 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="page-shell">
-      <ScrollToTop />
-      <SiteHeader />
-      <div className="route-shell" key={location.pathname}>
-        <Routes>
-          <Route element={<HomePage />} path="/" />
-          <Route element={<ProjectPage />} path="/projects/:slug" />
-        </Routes>
+    <div className="relative isolate min-h-screen bg-[var(--color-background)] text-white">
+      <div className="absolute inset-0">
+        <BackgroundInteractionLayer />
       </div>
-      <SiteFooter status="milestone_9" />
+      <ScrollToTop />
+      <div className="relative z-10">
+        <SiteHeader />
+        <div className="relative z-10" key={location.pathname}>
+          <Routes>
+            <Route element={<HomePage />} path="/" />
+            <Route element={<ProjectPage />} path="/projects/:slug" />
+          </Routes>
+        </div>
+        <div className="relative z-10">
+          <SiteFooter />
+        </div>
+      </div>
     </div>
   );
 }
