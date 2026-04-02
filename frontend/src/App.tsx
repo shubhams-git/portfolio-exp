@@ -1,5 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { BackgroundInteractionLayer } from "@/components/BackgroundInteractionLayer";
+
+import "./App.css";
+import { CosmicBackground } from "@/components/CosmicBackground";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -10,23 +12,17 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="relative isolate min-h-screen bg-[var(--color-background)] text-white">
-      <div className="absolute inset-0">
-        <BackgroundInteractionLayer />
-      </div>
+    <div className="page-shell">
+      <CosmicBackground />
       <ScrollToTop />
-      <div className="relative z-10">
-        <SiteHeader />
-        <div className="relative z-10" key={location.pathname}>
-          <Routes>
-            <Route element={<HomePage />} path="/" />
-            <Route element={<ProjectPage />} path="/projects/:slug" />
-          </Routes>
-        </div>
-        <div className="relative z-10">
-          <SiteFooter />
-        </div>
+      <SiteHeader />
+      <div className="route-shell" key={location.pathname}>
+        <Routes>
+          <Route element={<HomePage />} path="/" />
+          <Route element={<ProjectPage />} path="/projects/:slug" />
+        </Routes>
       </div>
+      <SiteFooter status="milestone_9" />
     </div>
   );
 }
