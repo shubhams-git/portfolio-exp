@@ -11,19 +11,24 @@ export type SeoMetadata = {
   twitterCard?: "summary" | "summary_large_image";
   twitterSite?: string;
   twitterCreator?: string;
+  author?: string;
+  keywords?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 };
 
-const DEFAULT_TITLE = "The Layered Matrix";
+const SITE_URL = "https://portfolio-exp.vercel.app";
+const DEFAULT_TITLE = "Shubham Sharma | Full-Stack Developer — Portfolio";
 const DEFAULT_DESCRIPTION =
-  "A cinematic, recruiter-readable software engineering portfolio for Shubham Sharma.";
+  "Shubham Sharma is a Melbourne-based full-stack developer building with React, Node.js, Python, and AI. Explore projects in conversational AI, data visualization, and cloud-deployed ML systems.";
 const DEFAULT_IMAGE = "/meta/og-default.svg";
-const DEFAULT_IMAGE_ALT = "The Layered Matrix portfolio preview";
-const DEFAULT_SITE_NAME = "The Layered Matrix";
+const DEFAULT_IMAGE_ALT = "Shubham Sharma — Full-Stack Developer Portfolio";
+const DEFAULT_SITE_NAME = "Shubham Sharma — Portfolio";
 const DEFAULT_TWITTER_CARD = "summary_large_image";
+const DEFAULT_AUTHOR = "Shubham Sharma";
 
 function getOrigin() {
   if (typeof window === "undefined") {
-    return "";
+    return SITE_URL;
   }
 
   return window.location.origin;
@@ -84,6 +89,21 @@ function setRobotsMeta(noIndex?: boolean, noFollow?: boolean) {
   upsertMeta("name", "robots", directives.join(","));
 }
 
+const DYNAMIC_JSONLD_ID = "dynamic-jsonld";
+
+function injectJsonLd(data: Record<string, unknown> | Record<string, unknown>[]) {
+  let script = document.getElementById(DYNAMIC_JSONLD_ID) as HTMLScriptElement | null;
+
+  if (!script) {
+    script = document.createElement("script");
+    script.id = DYNAMIC_JSONLD_ID;
+    script.type = "application/ld+json";
+    document.head.appendChild(script);
+  }
+
+  script.textContent = JSON.stringify(data);
+}
+
 export function setDocumentMetadata(title: string, description: string): void;
 export function setDocumentMetadata(metadata: SeoMetadata): void;
 export function setDocumentMetadata(
@@ -109,6 +129,7 @@ export function setDocumentMetadata(
   document.title = resolvedTitle;
 
   upsertMeta("name", "description", resolvedDescription);
+  upsertMeta("name", "author", metadata.author ?? DEFAULT_AUTHOR);
   upsertMeta("property", "og:title", resolvedTitle);
   upsertMeta("property", "og:description", resolvedDescription);
   upsertMeta("property", "og:type", resolvedType);
@@ -116,11 +137,16 @@ export function setDocumentMetadata(
   upsertMeta("property", "og:image", resolvedImage);
   upsertMeta("property", "og:image:alt", resolvedImageAlt);
   upsertMeta("property", "og:url", resolvedCanonical);
+  upsertMeta("property", "og:locale", "en_AU");
   upsertMeta("name", "twitter:card", resolvedCard);
   upsertMeta("name", "twitter:title", resolvedTitle);
   upsertMeta("name", "twitter:description", resolvedDescription);
   upsertMeta("name", "twitter:image", resolvedImage);
   upsertMeta("name", "twitter:image:alt", resolvedImageAlt);
+
+  if (metadata.keywords) {
+    upsertMeta("name", "keywords", metadata.keywords);
+  }
 
   if (metadata.twitterSite) {
     upsertMeta("name", "twitter:site", metadata.twitterSite);
@@ -135,4 +161,8 @@ export function setDocumentMetadata(
   }
 
   setRobotsMeta(metadata.noIndex, metadata.noFollow);
+
+  if (metadata.jsonLd) {
+    injectJsonLd(metadata.jsonLd);
+  }
 }

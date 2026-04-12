@@ -350,14 +350,38 @@ export function HomePage() {
     .filter((route) => route !== null);
   useEffect(() => {
     setDocumentMetadata({
-      title: siteTitle,
+      title: "Shubham Sharma | Full-Stack Developer — Portfolio",
       description:
-        "Shubham Sharma is a Melbourne-based full-stack developer building product-focused applications, practical AI integrations, and recruiter-readable case-study driven portfolio work.",
+        "Shubham Sharma is a Melbourne-based full-stack developer building with React, Node.js, Python, and AI. Explore projects in conversational AI, data visualization, and cloud-deployed ML systems.",
       canonical: "/",
       image: "/meta/og-default.svg",
-      imageAlt: "The Layered Matrix portfolio homepage preview",
-      siteName: siteTitle,
+      imageAlt: "Shubham Sharma — Full-Stack Developer Portfolio",
+      siteName: "Shubham Sharma — Portfolio",
       type: "website",
+      keywords: "Shubham Sharma, full-stack developer, React, Node.js, Python, TypeScript, AI, Melbourne, portfolio, software engineer, OpenAI, MongoDB, FastAPI, data visualization, machine learning",
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://portfolio-exp.vercel.app/",
+        "name": "Shubham Sharma — Full-Stack Developer Portfolio",
+        "description": "Portfolio and case studies by Shubham Sharma, a Melbourne-based full-stack developer.",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Shubham Sharma",
+          "jobTitle": "Full-Stack Developer",
+          "url": "https://portfolio-exp.vercel.app/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Melbourne",
+            "addressRegion": "VIC",
+            "addressCountry": "AU",
+          },
+          "sameAs": [
+            "https://github.com/shubhams-git",
+            "https://www.linkedin.com/in/ss-shubham-sharma/",
+          ],
+        },
+      },
     });
   }, [siteTitle]);
 
@@ -608,7 +632,7 @@ export function HomePage() {
               <motion.div className="space-y-5" custom={{ direction: "right", distance: 20 }} variants={sectionReveal}>
                 <ProjectGlassPanel className="p-6 sm:p-8">
                   <p className="text-base leading-8 text-white/70">
-                    I build product-focused software across frontend, backend, and AI integration work, with an emphasis on clarity, maintainability, and practical delivery.
+                    I'm a full-stack developer based in Melbourne who builds across the entire stack — from React frontends and Node.js APIs to Python ML pipelines and cloud deployments. I've shipped AI chatbots, data visualization platforms, and IoT dashboards, and I bring the same attention to clean architecture whether I'm writing a React component or deploying a model to Azure.
                   </p>
                 </ProjectGlassPanel>
                 <ProjectGlassPanel className="p-6 sm:p-8">

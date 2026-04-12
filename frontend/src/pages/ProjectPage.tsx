@@ -27,13 +27,35 @@ export function ProjectPage() {
     }
 
     setDocumentMetadata({
-      title: `${project.name} | ${portfolioContent.siteTitle}`,
+      title: `${project.name} — Case Study | Shubham Sharma`,
       description: project.caseStudy.seoDescription,
       canonical: `/projects/${project.slug}`,
       image: project.visual.assetUrl,
       imageAlt: project.visual.alt,
-      siteName: portfolioContent.siteTitle,
+      siteName: "Shubham Sharma — Portfolio",
       type: "article",
+      keywords: `${project.name}, ${project.coreStack.join(", ")}, case study, Shubham Sharma, full-stack developer, portfolio`,
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": project.name,
+        "description": project.caseStudy.seoDescription,
+        "url": `https://portfolio-exp.vercel.app/projects/${project.slug}`,
+        "author": {
+          "@type": "Person",
+          "name": "Shubham Sharma",
+          "url": "https://portfolio-exp.vercel.app/",
+        },
+        "keywords": project.coreStack.join(", "),
+        "about": {
+          "@type": "Thing",
+          "name": project.category,
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://portfolio-exp.vercel.app/#website",
+        },
+      },
     });
   }, [project]);
 
@@ -184,12 +206,12 @@ export function ProjectPage() {
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <ProjectMetricCard
-                detail="The engineering surface needed to stay credible in interviews, not just visually polished."
+                detail="Every technical decision is documented and explained, not hidden behind polish."
                 label="Design goal"
-                value="Recruiter-readable delivery"
+                value="Clear, documented engineering"
               />
               <ProjectMetricCard
-                detail="The project stays useful because the interface and the technical narrative stay aligned."
+                detail="The interface design and technical implementation reinforce each other at every layer."
                 label="Product lens"
                 value="Interface + architecture"
               />

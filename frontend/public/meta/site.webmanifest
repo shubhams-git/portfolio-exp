@@ -1,7 +1,7 @@
 {
-  "name": "The Layered Matrix",
-  "short_name": "Layered Matrix",
-  "description": "A cinematic, recruiter-readable software engineering portfolio.",
+  "name": "Shubham Sharma — Portfolio",
+  "short_name": "Shubham Sharma",
+  "description": "Full-stack developer portfolio showcasing projects in AI, data visualization, and cloud-deployed systems.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
