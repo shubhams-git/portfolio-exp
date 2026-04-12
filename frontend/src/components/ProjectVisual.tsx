@@ -32,6 +32,8 @@ export function ProjectVisual({
       <img
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-[0.94]"
+        decoding="async"
+        loading="lazy"
         src={project.visual.assetUrl}
         style={imageStyle}
       />

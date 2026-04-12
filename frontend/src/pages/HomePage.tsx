@@ -354,7 +354,7 @@ export function HomePage() {
       description:
         "Shubham Sharma is a Melbourne-based full-stack developer building with React, Node.js, Python, and AI. Explore projects in conversational AI, data visualization, and cloud-deployed ML systems.",
       canonical: "/",
-      image: "/meta/og-default.svg",
+      image: "/meta/og-default.png",
       imageAlt: "Shubham Sharma — Full-Stack Developer Portfolio",
       siteName: "Shubham Sharma — Portfolio",
       type: "website",

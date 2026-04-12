@@ -4,7 +4,6 @@ import { Link, Navigate, useParams } from "react-router-dom";
 
 import { ProjectGlassPanel, ProjectMetricCard, ProjectTagList } from "@/components/ProjectSurface";
 import { ProjectVisual } from "@/components/ProjectVisual";
-import { portfolioContent } from "@/content/portfolio-content";
 import { getAdjacentProjects, getProjectBySlug } from "@/lib/portfolio";
 import { setDocumentMetadata } from "@/lib/seo";
 
@@ -37,24 +36,36 @@ export function ProjectPage() {
       keywords: `${project.name}, ${project.coreStack.join(", ")}, case study, Shubham Sharma, full-stack developer, portfolio`,
       jsonLd: {
         "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": project.name,
-        "description": project.caseStudy.seoDescription,
-        "url": `https://portfolio-of-shubham.vercel.app/projects/${project.slug}`,
-        "author": {
-          "@type": "Person",
-          "name": "Shubham Sharma",
-          "url": "https://portfolio-of-shubham.vercel.app/",
-        },
-        "keywords": project.coreStack.join(", "),
-        "about": {
-          "@type": "Thing",
-          "name": project.category,
-        },
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://portfolio-of-shubham.vercel.app/#website",
-        },
+        "@graph": [
+          {
+            "@type": "CreativeWork",
+            "name": project.name,
+            "description": project.caseStudy.seoDescription,
+            "url": `https://portfolio-of-shubham.vercel.app/projects/${project.slug}`,
+            "author": {
+              "@type": "Person",
+              "name": "Shubham Sharma",
+              "url": "https://portfolio-of-shubham.vercel.app/",
+            },
+            "keywords": project.coreStack.join(", "),
+            "about": {
+              "@type": "Thing",
+              "name": project.category,
+            },
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://portfolio-of-shubham.vercel.app/#website",
+            },
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://portfolio-of-shubham.vercel.app/" },
+              { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://portfolio-of-shubham.vercel.app/#work" },
+              { "@type": "ListItem", "position": 3, "name": project.name, "item": `https://portfolio-of-shubham.vercel.app/projects/${project.slug}` },
+            ],
+          },
+        ],
       },
     });
   }, [project]);

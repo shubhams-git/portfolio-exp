@@ -29,15 +29,17 @@
     <meta property="og:url" content="https://portfolio-of-shubham.vercel.app/" />
     <meta property="og:site_name" content="Shubham Sharma — Portfolio" />
     <meta property="og:locale" content="en_AU" />
-    <meta property="og:image" content="https://portfolio-of-shubham.vercel.app/meta/og-default.svg" />
+    <meta property="og:image" content="https://portfolio-of-shubham.vercel.app/meta/og-default.png" />
     <meta property="og:image:alt" content="Shubham Sharma — Full-Stack Developer Portfolio" />
-    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Shubham Sharma | Full-Stack Developer" />
     <meta name="twitter:description" content="Melbourne-based full-stack developer. Projects in AI chatbots, data visualization, and cloud-deployed ML systems. React, Node.js, Python, TypeScript." />
-    <meta name="twitter:image" content="https://portfolio-of-shubham.vercel.app/meta/og-default.svg" />
+    <meta name="twitter:image" content="https://portfolio-of-shubham.vercel.app/meta/og-default.png" />
     <meta name="twitter:image:alt" content="Shubham Sharma — Full-Stack Developer Portfolio" />
 
     <!-- Favicons & PWA -->
@@ -45,8 +47,14 @@
     <link rel="apple-touch-icon" href="/meta/icon.svg" />
     <link rel="manifest" href="/meta/site.webmanifest" />
 
+    <!-- Mobile optimization -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
     <!-- Performance hints -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 
     <!-- JSON-LD Structured Data: Person + WebSite -->
     <script type="application/ld+json">
@@ -137,5 +145,32 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <div style="max-width:800px;margin:0 auto;padding:48px 24px;color:#fff;font-family:system-ui,sans-serif;background:#050505;min-height:100vh">
+        <h1 style="font-size:2.5rem;letter-spacing:-0.04em">Shubham Sharma</h1>
+        <p style="color:#a1a1aa;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.2em">Full-Stack Developer &middot; Melbourne, VIC</p>
+        <p style="margin-top:1.5rem;line-height:1.8;color:#d4d4d8">I build full-stack applications with React, Node.js, and Python — shipping everything from AI-powered products to real-time data platforms, backed by clean architecture and cloud infrastructure.</p>
+        <h2 style="margin-top:2rem;color:#6ffbbe">Projects</h2>
+        <ul style="line-height:2;color:#d4d4d8">
+          <li><strong>RizzBot</strong> — Full-stack AI chatbot with multi-turn conversations, prompt orchestration, and session management (React, TypeScript, Node.js, MongoDB, OpenAI)</li>
+          <li><strong>Weather App</strong> — Interactive weather dashboard with real-time D3 visualizations and FastAPI backend (React, TypeScript, FastAPI, D3)</li>
+          <li><strong>AI Financial Forecasting</strong> — Time-series prediction system with Python ML pipeline, Flask API, and Azure deployment (Python, Flask, Azure, Pandas)</li>
+        </ul>
+        <h2 style="margin-top:2rem;color:#6ffbbe">Experience</h2>
+        <ul style="line-height:2;color:#d4d4d8">
+          <li><strong>Philotimo Global</strong> (Jun–Sep 2025) — AI integration, backend APIs, MCP, Xero automation</li>
+          <li><strong>Aubot</strong> (Feb–May 2024) — React/TypeScript frontend engineering</li>
+          <li><strong>Inverloch Bike Hire</strong> (Dec 2023–Mar 2024) — Full-stack web development</li>
+          <li><strong>Manatzura</strong> (Feb–Nov 2023) — Flutter, IoT, AWS integration</li>
+        </ul>
+        <h2 style="margin-top:2rem;color:#6ffbbe">Skills</h2>
+        <p style="color:#d4d4d8">React, TypeScript, Node.js, Python, FastAPI, Express, MongoDB, PostgreSQL, OpenAI API, D3.js, Azure, AWS, Docker, Git, Prompt Engineering, MCP, Flutter</p>
+        <h2 style="margin-top:2rem;color:#6ffbbe">Contact</h2>
+        <p style="color:#d4d4d8">
+          <a href="https://github.com/shubhams-git" style="color:#6ffbbe">GitHub</a> &middot;
+          <a href="https://www.linkedin.com/in/ss-shubham-sharma/" style="color:#6ffbbe">LinkedIn</a>
+        </p>
+      </div>
+    </noscript>
   </body>
 </html>
