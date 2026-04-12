@@ -93,14 +93,25 @@ export function createContactRouter({
       receivedAt: new Date(now()).toISOString(),
     });
 
+    let stored = false;
+
     try {
       await store.append(submission);
+      stored = true;
       logger.info("[contact] submission stored", {
         id: submission.id,
         ip: submission.ip,
         email: submission.email,
       });
+    } catch (error) {
+      logger.error("[contact] failed to persist submission", {
+        ip: request.ip,
+        email: parsed.data.email,
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
+    }
 
+    try {
       const notificationResult = await notifier.sendContactNotification(submission);
       const emailed = notificationResult.status === "sent";
 
@@ -120,6 +131,14 @@ export function createContactRouter({
         });
       }
 
+      if (!stored && !emailed) {
+        response.status(500).json({
+          status: "error",
+          message: "Unable to process contact submission right now. Please try again later.",
+        });
+        return;
+      }
+
       response.status(202).json({
         status: "accepted",
         receiptId: submission.id,
@@ -130,15 +149,26 @@ export function createContactRouter({
           : `Submission received for ${submission.name}. It has been stored for follow-up.`,
       });
     } catch (error) {
-      logger.error("[contact] failed to persist submission", {
+      logger.error("[contact] notification processing failed", {
         ip: request.ip,
         email: parsed.data.email,
         error: error instanceof Error ? error.message : "Unknown error",
       });
 
+      if (stored) {
+        response.status(202).json({
+          status: "accepted",
+          receiptId: submission.id,
+          receiver: env.CONTACT_RECEIVER,
+          delivery: "stored_only",
+          message: `Submission received for ${submission.name}. It has been stored for follow-up.`,
+        });
+        return;
+      }
+
       response.status(500).json({
         status: "error",
-        message: "Unable to persist contact submission right now. Please try again later.",
+        message: "Unable to process contact submission right now. Please try again later.",
       });
     }
   });

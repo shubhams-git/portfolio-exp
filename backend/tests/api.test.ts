@@ -8,6 +8,7 @@ import { describe, expect, it, vi } from "vitest";
 import { createApp } from "../src/app.js";
 import type { AppEnv } from "../src/config/env.js";
 import type { ContactNotifier } from "../src/lib/contact-notifier.js";
+import type { ContactSubmissionStore } from "../src/lib/contact-store.js";
 
 const baseEnv: AppEnv = {
   PORT: 8000,
@@ -150,6 +151,37 @@ describe("API", () => {
         message: payload.message,
       }),
     );
+  });
+
+  it("accepts the submission when storage fails but email delivery succeeds", async () => {
+    const notifier: ContactNotifier = {
+      sendContactNotification: vi.fn(async () => ({
+        status: "sent",
+        provider: "resend",
+        emailId: "email_456",
+      })),
+    };
+    const store: ContactSubmissionStore = {
+      append: vi.fn(async () => {
+        throw new Error("EACCES: permission denied, mkdir '/var/data'");
+      }),
+    };
+    const app = createApp({
+      env: baseEnv,
+      contactNotifier: notifier,
+      contactStore: store,
+    });
+    const payload = {
+      name: "Alex Drake",
+      email: "alex@example.com",
+      message: "I would like to talk about a full-stack engineering role.",
+    };
+
+    const response = await request(app).post("/api/contact").send(payload);
+
+    expect(response.status).toBe(202);
+    expect(response.body.delivery).toBe("email_sent");
+    expect(response.body.message).toContain("notification email has been sent");
   });
 
   it("rate limits repeated contact submissions from the same client", async () => {
