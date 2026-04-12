@@ -40,11 +40,11 @@ export function ProjectPage() {
         "@type": "CreativeWork",
         "name": project.name,
         "description": project.caseStudy.seoDescription,
-        "url": `https://portfolio-exp.vercel.app/projects/${project.slug}`,
+        "url": `https://portfolio-of-shubham.vercel.app/projects/${project.slug}`,
         "author": {
           "@type": "Person",
           "name": "Shubham Sharma",
-          "url": "https://portfolio-exp.vercel.app/",
+          "url": "https://portfolio-of-shubham.vercel.app/",
         },
         "keywords": project.coreStack.join(", "),
         "about": {
@@ -53,7 +53,7 @@ export function ProjectPage() {
         },
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://portfolio-exp.vercel.app/#website",
+          "@id": "https://portfolio-of-shubham.vercel.app/#website",
         },
       },
     });

@@ -16,7 +16,7 @@ export type SeoMetadata = {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 };
 
-const SITE_URL = "https://portfolio-exp.vercel.app";
+const SITE_URL = "https://portfolio-of-shubham.vercel.app";
 const DEFAULT_TITLE = "Shubham Sharma | Full-Stack Developer — Portfolio";
 const DEFAULT_DESCRIPTION =
   "Shubham Sharma is a Melbourne-based full-stack developer building with React, Node.js, Python, and AI. Explore projects in conversational AI, data visualization, and cloud-deployed ML systems.";

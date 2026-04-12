@@ -362,14 +362,14 @@ export function HomePage() {
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
-        "url": "https://portfolio-exp.vercel.app/",
+        "url": "https://portfolio-of-shubham.vercel.app/",
         "name": "Shubham Sharma — Full-Stack Developer Portfolio",
         "description": "Portfolio and case studies by Shubham Sharma, a Melbourne-based full-stack developer.",
         "mainEntity": {
           "@type": "Person",
           "name": "Shubham Sharma",
           "jobTitle": "Full-Stack Developer",
-          "url": "https://portfolio-exp.vercel.app/",
+          "url": "https://portfolio-of-shubham.vercel.app/",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Melbourne",

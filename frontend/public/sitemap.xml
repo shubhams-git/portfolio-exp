@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://portfolio-exp.vercel.app/</loc>
+    <loc>https://portfolio-of-shubham.vercel.app/</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://portfolio-exp.vercel.app/projects/rizzbot</loc>
+    <loc>https://portfolio-of-shubham.vercel.app/projects/rizzbot</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portfolio-exp.vercel.app/projects/weather-app</loc>
+    <loc>https://portfolio-of-shubham.vercel.app/projects/weather-app</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portfolio-exp.vercel.app/projects/ai-financial-forecasting</loc>
+    <loc>https://portfolio-of-shubham.vercel.app/projects/ai-financial-forecasting</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
