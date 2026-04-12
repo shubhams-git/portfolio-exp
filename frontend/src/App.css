@@ -1845,3 +1845,165 @@
     min-height: 24rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SPLASH SCREEN
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Wrapper driven by AnimatePresence exit (opacity fade) */
+.splash-exit-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: all;
+}
+
+/* Outer shell — transparent so the CosmicBackground canvas (z-index 0)
+   shows through the tint layer below */
+.splash-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Tint layer — starts fully opaque, fades to ~80% during Phase 1 so stars bleed through */
+.splash-tint {
+  position: absolute;
+  inset: 0;
+  background: #050505;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Particle convergence canvas — Phase 4 */
+.splash-particles-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* SVG title — centred, scales with viewport */
+.splash-title-svg {
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 860px);
+  height: auto;
+  overflow: visible; /* let SVG filters bloom outside the viewBox */
+}
+
+/*
+ * Splash typography — Playfair Display: a high-contrast transitional serif
+ * with dramatic thick/thin stroke variation. Feels cinematic and premium
+ * compared to Clash Display's geometric neutrality.
+ *
+ * font-size and letter-spacing are NOT set here — they live as SVG
+ * presentation attributes (user units) so getComputedTextLength()
+ * stays consistent with the viewBox space.
+ */
+.splash-text-base {
+  font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.splash-text-1 {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.splash-text-2 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* White blast flash — Phase 6 */
+.splash-blast-overlay {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Skip button — unobtrusive, bottom-right */
+.splash-skip-btn {
+  position: absolute;
+  bottom: 1.75rem;
+  right: 2rem;
+  z-index: 20;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.30);
+  font-family: var(--font-mono);
+  font-size: 0.70rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.35rem 0.75rem;
+  transition: color 180ms ease, border-color 180ms ease;
+  line-height: 1;
+}
+
+.splash-skip-btn:hover,
+.splash-skip-btn:focus-visible {
+  color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.30);
+  outline: none;
+}
+
+/* ── Reduced-motion: hide visual elements but keep wrapper in DOM so
+      React refs stay valid and onComplete fires correctly ─────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .splash-tint,
+  .splash-particles-canvas,
+  .splash-title-svg,
+  .splash-blast-overlay,
+  .splash-skip-btn {
+    display: none;
+  }
+
+  /* Remove exit transition delay — splash should disappear instantly */
+  .splash-exit-wrapper {
+    transition: none !important;
+  }
+}
+
+/* ── Ambient radial glow behind the title — depth and atmosphere ─────────── */
+.splash-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 60% 45% at 50% 55%,
+      rgba(111, 251, 190, 0.055) 0%,
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Mobile scaling ───────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .splash-title-svg {
+    width: 96vw;
+  }
+
+  .splash-skip-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}
+
+/* ── Landscape short viewports (e.g. phones in landscape) ────────────────── */
+@media (max-height: 500px) {
+  .splash-title-svg {
+    width: min(70vw, 700px);
+  }
+}
