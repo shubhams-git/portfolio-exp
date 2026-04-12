@@ -21,6 +21,12 @@ services:
         value: "true"
       - key: CONTACT_RECEIVER
         sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CONTACT_EMAIL_FROM
+        sync: false
+      - key: CONTACT_EMAIL_SUBJECT_PREFIX
+        value: "[Portfolio Contact]"
       - key: CONTACT_STORAGE_PATH
         value: /var/data/contact-submissions.ndjson
       - key: CONTACT_RATE_LIMIT_WINDOW_MS

@@ -7,6 +7,11 @@ import {
   type ContactSubmissionStore,
 } from "./lib/contact-store.js";
 import {
+  createDisabledContactNotifier,
+  createResendContactNotifier,
+  type ContactNotifier,
+} from "./lib/contact-notifier.js";
+import {
   createFixedWindowRateLimiter,
   type ContactRateLimiter,
 } from "./lib/contact-rate-limit.js";
@@ -19,6 +24,7 @@ export type AppDependencies = {
   logger?: AppLogger;
   contactStore?: ContactSubmissionStore;
   rateLimiter?: ContactRateLimiter;
+  contactNotifier?: ContactNotifier;
 };
 
 /** Vercel deployment URLs (preview and production) use this host pattern. */
@@ -67,6 +73,17 @@ export function createApp(dependencies: AppDependencies = {}) {
   const contactStore =
     dependencies.contactStore ??
     createNdjsonContactSubmissionStore(runtimeEnv.CONTACT_STORAGE_PATH);
+  const contactNotifier =
+    dependencies.contactNotifier ??
+    (runtimeEnv.RESEND_API_KEY && runtimeEnv.CONTACT_EMAIL_FROM
+      ? createResendContactNotifier({
+          apiKey: runtimeEnv.RESEND_API_KEY,
+          from: runtimeEnv.CONTACT_EMAIL_FROM,
+          to: runtimeEnv.CONTACT_RECEIVER,
+          subjectPrefix: runtimeEnv.CONTACT_EMAIL_SUBJECT_PREFIX,
+          logger,
+        })
+      : createDisabledContactNotifier());
   const rateLimiter =
     dependencies.rateLimiter ??
     createFixedWindowRateLimiter({
@@ -97,6 +114,7 @@ export function createApp(dependencies: AppDependencies = {}) {
     createContactRouter({
       env: runtimeEnv,
       store: contactStore,
+      notifier: contactNotifier,
       rateLimiter,
       logger,
     }),

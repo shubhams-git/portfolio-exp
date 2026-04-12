@@ -6,6 +6,7 @@ import {
   createContactSubmissionRecord,
   type ContactSubmissionStore,
 } from "../lib/contact-store.js";
+import { type ContactNotifier } from "../lib/contact-notifier.js";
 import {
   createFixedWindowRateLimiter,
   type ContactRateLimiter,
@@ -21,6 +22,7 @@ const contactSchema = z.object({
 export type ContactRouterDependencies = {
   env: AppEnv;
   store: ContactSubmissionStore;
+  notifier: ContactNotifier;
   rateLimiter: ContactRateLimiter;
   logger?: AppLogger;
   now?: () => number;
@@ -29,6 +31,7 @@ export type ContactRouterDependencies = {
 export function createContactRouter({
   env,
   store,
+  notifier,
   rateLimiter,
   logger = defaultLogger,
   now = Date.now,
@@ -98,11 +101,33 @@ export function createContactRouter({
         email: submission.email,
       });
 
+      const notificationResult = await notifier.sendContactNotification(submission);
+      const emailed = notificationResult.status === "sent";
+
+      if (notificationResult.status === "sent") {
+        logger.info("[contact] notification email sent", {
+          receiptId: submission.id,
+          emailId: notificationResult.emailId ?? null,
+          provider: notificationResult.provider,
+        });
+      }
+
+      if (notificationResult.status === "failed") {
+        logger.error("[contact] notification email failed", {
+          receiptId: submission.id,
+          provider: notificationResult.provider,
+          error: notificationResult.error,
+        });
+      }
+
       response.status(202).json({
         status: "accepted",
         receiptId: submission.id,
         receiver: env.CONTACT_RECEIVER,
-        message: `Submission received for ${submission.name}. It has been stored for follow-up.`,
+        delivery: emailed ? "email_sent" : "stored_only",
+        message: emailed
+          ? `Submission received for ${submission.name}. A notification email has been sent for follow-up.`
+          : `Submission received for ${submission.name}. It has been stored for follow-up.`,
       });
     } catch (error) {
       logger.error("[contact] failed to persist submission", {

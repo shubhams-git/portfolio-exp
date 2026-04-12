@@ -3,10 +3,11 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 import request from "supertest";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { createApp } from "../src/app.js";
 import type { AppEnv } from "../src/config/env.js";
+import type { ContactNotifier } from "../src/lib/contact-notifier.js";
 
 const baseEnv: AppEnv = {
   PORT: 8000,
@@ -114,6 +115,41 @@ describe("API", () => {
       ip: "203.0.113.10",
     });
     expect(persistedRecord.id).toBe(response.body.receiptId);
+  });
+
+  it("sends a notification email when a notifier is configured", async () => {
+    const storageDir = await mkdtemp(join(tmpdir(), "layered-matrix-backend-"));
+    const env = {
+      ...baseEnv,
+      CONTACT_STORAGE_PATH: join(storageDir, "contact-submissions.ndjson"),
+    } satisfies AppEnv;
+    const notifier: ContactNotifier = {
+      sendContactNotification: vi.fn(async () => ({
+        status: "sent",
+        provider: "resend",
+        emailId: "email_123",
+      })),
+    };
+
+    const app = createApp({ env, contactNotifier: notifier });
+    const payload = {
+      name: "Alex Drake",
+      email: "alex@example.com",
+      message: "I would like to talk about a full-stack engineering role.",
+    };
+
+    const response = await request(app).post("/api/contact").send(payload);
+
+    expect(response.status).toBe(202);
+    expect(response.body.delivery).toBe("email_sent");
+    expect(response.body.message).toContain("notification email has been sent");
+    expect(notifier.sendContactNotification).toHaveBeenCalledWith(
+      expect.objectContaining({
+        name: payload.name,
+        email: payload.email,
+        message: payload.message,
+      }),
+    );
   });
 
   it("rate limits repeated contact submissions from the same client", async () => {

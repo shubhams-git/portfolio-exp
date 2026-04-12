@@ -19,6 +19,8 @@ Deploy the backend first, because the frontend build needs the live backend URL.
 6. Provide values for the prompted secrets:
    - `ALLOWED_ORIGINS`
    - `CONTACT_RECEIVER`
+   - `RESEND_API_KEY` if you want email notifications enabled
+   - `CONTACT_EMAIL_FROM` if you want email notifications enabled
 7. Confirm the remaining defaults:
    - runtime: `node`
    - build command: `npm ci && npm run build`
@@ -47,6 +49,9 @@ Deploy the backend first, because the frontend build needs the live backend URL.
 ALLOWED_ORIGINS=https://your-frontend.vercel.app
 CORS_ALLOW_VERCEL_PREVIEW=true
 CONTACT_RECEIVER=you@example.com
+RESEND_API_KEY=re_xxxxxxxxx
+CONTACT_EMAIL_FROM=Shubham Sharma <hello@yourdomain.com>
+CONTACT_EMAIL_SUBJECT_PREFIX=[Portfolio Contact]
 CONTACT_STORAGE_PATH=/var/data/contact-submissions.ndjson
 CONTACT_RATE_LIMIT_WINDOW_MS=900000
 CONTACT_RATE_LIMIT_MAX=5
@@ -59,6 +64,19 @@ After Render finishes, verify:
 
 - `GET https://your-backend.onrender.com/api/health` returns `{"status":"ok"}`
 - `GET https://your-backend.onrender.com/` returns the service status payload
+
+### Email setup with Resend
+
+For a free but production-appropriate setup:
+
+1. Create a Resend account.
+2. Add your receiving inbox as `CONTACT_RECEIVER`.
+3. For quick testing, use `Portfolio Contact <onboarding@resend.dev>` as `CONTACT_EMAIL_FROM`.
+4. For production, verify your own domain in Resend and switch `CONTACT_EMAIL_FROM` to something like `Shubham Sharma <hello@yourdomain.com>`.
+5. Add `RESEND_API_KEY` and `CONTACT_EMAIL_FROM` to Render.
+6. Redeploy the backend.
+
+The backend will still store submissions on disk even if email delivery is unavailable, so you retain a fallback audit trail.
 
 ## 2. Deploy the frontend on Vercel
 
@@ -110,7 +128,9 @@ Run these checks in order:
 3. Submit the contact form from the Vercel site.
 4. Confirm the browser does not show a CORS failure in DevTools.
 5. Confirm the Render API responds with `202 Accepted`.
-6. If you attached a disk, verify submissions appear in the Render service filesystem under `/var/data/contact-submissions.ndjson`.
+6. Confirm the contact response message says a notification email was sent.
+7. Check your inbox for the email notification from Resend.
+8. If you attached a disk, verify submissions appear in the Render service filesystem under `/var/data/contact-submissions.ndjson`.
 
 ## 6. Common failure cases
 
@@ -129,3 +149,12 @@ The frontend now fails with a clear message when `VITE_API_BASE_URL` is missing 
 ### Contact submissions disappear on Render
 
 Render filesystems are ephemeral unless you attach a persistent disk. Keep the disk mounted at `/var/data` and keep `CONTACT_STORAGE_PATH=/var/data/contact-submissions.ndjson`.
+
+### Contact form submits but no email arrives
+
+Usually one of these is wrong:
+
+- `RESEND_API_KEY` is missing or invalid
+- `CONTACT_EMAIL_FROM` is missing
+- your sender domain is not verified in Resend and you are not using `onboarding@resend.dev`
+- the email hit your spam folder during early testing

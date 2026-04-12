@@ -140,6 +140,9 @@ Backend:
 PORT=8000
 ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
 CONTACT_RECEIVER=hello@example.com
+RESEND_API_KEY=
+CONTACT_EMAIL_FROM=
+CONTACT_EMAIL_SUBJECT_PREFIX=[Portfolio Contact]
 CONTACT_STORAGE_PATH=data/contact-submissions.ndjson
 CONTACT_RATE_LIMIT_WINDOW_MS=900000
 CONTACT_RATE_LIMIT_MAX=5
@@ -222,6 +225,7 @@ What is already working:
 - terminal contact form posting to Express
 - contact payload validation
 - persisted contact submissions with rate limiting
+- optional Resend-backed email notifications to the portfolio owner
 - backend healthcheck and tests
 
 What is still intentionally incomplete:
@@ -229,7 +233,7 @@ What is still intentionally incomplete:
 - no verified public GitHub/LinkedIn/source URLs are bundled in the repo, so those links route users to contact instead of faking external profiles
 - project visuals are static SVG case-study surfaces, not screenshots captured from live deployed products
 - no real portrait asset yet
-- contact submissions are stored locally rather than delivered through an external provider
+- contact submissions are stored locally and can optionally send an email notification when Resend is configured
 - some final accessibility and mobile-polish work remains
 
 ## Recommended Next Build Order

@@ -14,4 +14,12 @@ describe("loadEnv", () => {
       "http://127.0.0.1:5173",
     ]);
   });
+
+  it("rejects partial resend email configuration", () => {
+    expect(() =>
+      loadEnv({
+        RESEND_API_KEY: "re_test_123",
+      }),
+    ).toThrow("CONTACT_EMAIL_FROM is required when RESEND_API_KEY is set.");
+  });
 });

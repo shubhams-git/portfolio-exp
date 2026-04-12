@@ -3,6 +3,16 @@ import { z } from "zod";
 
 dotenv.config();
 
+function optionalStringSchema() {
+  return z
+    .string()
+    .optional()
+    .transform((value) => {
+      const trimmed = value?.trim();
+      return trimmed ? trimmed : undefined;
+    });
+}
+
 export function normalizeOrigin(value: string) {
   const trimmed = value.trim();
 
@@ -50,6 +60,9 @@ const envSchema = z.object({
       message: "At least one allowed origin must be configured.",
     }),
   CONTACT_RECEIVER: z.email().default("hello@example.com"),
+  RESEND_API_KEY: optionalStringSchema(),
+  CONTACT_EMAIL_FROM: optionalStringSchema(),
+  CONTACT_EMAIL_SUBJECT_PREFIX: z.string().trim().default("[Portfolio Contact]"),
   CONTACT_STORAGE_PATH: z.string().trim().min(1).default("data/contact-submissions.ndjson"),
   CONTACT_RATE_LIMIT_WINDOW_MS: z.coerce.number().int().positive().default(15 * 60 * 1000),
   CONTACT_RATE_LIMIT_MAX: z.coerce.number().int().positive().default(5),
@@ -62,6 +75,22 @@ const envSchema = z.object({
     .string()
     .default("false")
     .transform((value) => parseBooleanString(value)),
+}).superRefine((value, context) => {
+  if (value.RESEND_API_KEY && !value.CONTACT_EMAIL_FROM) {
+    context.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ["CONTACT_EMAIL_FROM"],
+      message: "CONTACT_EMAIL_FROM is required when RESEND_API_KEY is set.",
+    });
+  }
+
+  if (value.CONTACT_EMAIL_FROM && !value.RESEND_API_KEY) {
+    context.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ["RESEND_API_KEY"],
+      message: "RESEND_API_KEY is required when CONTACT_EMAIL_FROM is set.",
+    });
+  }
 });
 
 export type AppEnv = z.infer<typeof envSchema>;
