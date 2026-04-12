@@ -42,6 +42,50 @@ describe("API", () => {
     expect(response.body).toEqual({ status: "ok" });
   });
 
+  it("returns CORS headers for configured origins", async () => {
+    const { app } = await createTestApp({
+      ALLOWED_ORIGINS: ["https://portfolio-exp.vercel.app"],
+    });
+
+    const response = await request(app)
+      .options("/api/contact")
+      .set("Origin", "https://portfolio-exp.vercel.app")
+      .set("Access-Control-Request-Method", "POST");
+
+    expect(response.status).toBe(204);
+    expect(response.headers["access-control-allow-origin"]).toBe(
+      "https://portfolio-exp.vercel.app",
+    );
+  });
+
+  it("allows Vercel preview origins when enabled", async () => {
+    const { app } = await createTestApp({
+      CORS_ALLOW_VERCEL_PREVIEW: true,
+    });
+
+    const response = await request(app)
+      .options("/api/contact")
+      .set("Origin", "https://portfolio-exp-git-main-shubham.vercel.app")
+      .set("Access-Control-Request-Method", "POST");
+
+    expect(response.status).toBe(204);
+    expect(response.headers["access-control-allow-origin"]).toBe(
+      "https://portfolio-exp-git-main-shubham.vercel.app",
+    );
+  });
+
+  it("omits CORS headers for disallowed origins", async () => {
+    const { app } = await createTestApp();
+
+    const response = await request(app)
+      .options("/api/contact")
+      .set("Origin", "https://malicious.example.com")
+      .set("Access-Control-Request-Method", "POST");
+
+    expect(response.status).toBe(200);
+    expect(response.headers["access-control-allow-origin"]).toBeUndefined();
+  });
+
   it("accepts a valid contact submission and persists it", async () => {
     const { app, env } = await createTestApp();
     const payload = {

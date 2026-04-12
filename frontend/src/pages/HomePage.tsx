@@ -9,6 +9,7 @@ import { ProjectGlassPanel, ProjectTagList } from "@/components/ProjectSurface";
 import { ProjectVisual } from "@/components/ProjectVisual";
 import { QuickPreviewModal } from "@/components/QuickPreviewModal";
 import { portfolioContent } from "@/content/portfolio-content";
+import { getContactEndpoint } from "@/lib/api";
 import { setDocumentMetadata } from "@/lib/seo";
 import type {
   ContactLink,
@@ -393,9 +394,20 @@ export function HomePage() {
     }
     setIsSubmitting(true);
     setContactStatus({ tone: "idle", message: "" });
-    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:8000";
+    const contactEndpoint = getContactEndpoint();
+
+    if (!contactEndpoint) {
+      setIsSubmitting(false);
+      setContactStatus({
+        tone: "error",
+        message:
+          "API base URL is not configured. Set VITE_API_BASE_URL in Vercel to your Render backend URL.",
+      });
+      return;
+    }
+
     try {
-      const response = await fetch(`${apiBaseUrl}/api/contact`, {
+      const response = await fetch(contactEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(contactValues),
@@ -419,7 +431,9 @@ export function HomePage() {
     } catch {
       setContactStatus({
         tone: "error",
-        message: "API connection failed. Confirm the Express backend is running on the configured port.",
+        message: import.meta.env.DEV
+          ? "API connection failed. Confirm the Express backend is running on the configured port."
+          : "API connection failed. Confirm VITE_API_BASE_URL points to the live Render backend and that Render allows this Vercel origin.",
       });
     } finally {
       setIsSubmitting(false);

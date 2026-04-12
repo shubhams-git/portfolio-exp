@@ -3,6 +3,23 @@ import { z } from "zod";
 
 dotenv.config();
 
+export function normalizeOrigin(value: string) {
+  const trimmed = value.trim();
+
+  if (!trimmed) {
+    throw new Error("Origin value cannot be empty.");
+  }
+
+  const normalizedValue = trimmed.replace(/\/+$/, "");
+  const parsed = new URL(normalizedValue);
+
+  if (!["http:", "https:"].includes(parsed.protocol)) {
+    throw new Error(`Origin must use http or https: ${value}`);
+  }
+
+  return parsed.origin;
+}
+
 function parseBooleanString(value: string) {
   const normalized = value.trim().toLowerCase();
 
@@ -28,6 +45,7 @@ const envSchema = z.object({
         .map((item) => item.trim())
         .filter(Boolean),
     )
+    .transform((origins) => origins.map((origin) => normalizeOrigin(origin)))
     .refine((origins) => origins.length > 0, {
       message: "At least one allowed origin must be configured.",
     }),

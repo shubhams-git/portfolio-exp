@@ -157,9 +157,13 @@ The frontend is a static Vite build and can be deployed independently from the A
 For production deployments:
 
 - set `ALLOWED_ORIGINS` to the deployed frontend origin
+- set `CORS_ALLOW_VERCEL_PREVIEW=true` on Render if you want Vercel preview deployments to call the API
 - set `VITE_API_BASE_URL` in the frontend environment to the deployed backend URL
 - serve the frontend build from a static host or CDN and the backend from a Node runtime
+- on Render, mount a persistent disk and set `CONTACT_STORAGE_PATH=/var/data/contact-submissions.ndjson` if you want contact submissions to survive redeploys
 - replace the placeholder `https://example.com` entries in `frontend/public/sitemap.xml` with the final production domain
+
+Step-by-step deployment instructions for this exact Vercel + Render split live in `DEPLOYMENT.md`.
 
 ## Verification
 

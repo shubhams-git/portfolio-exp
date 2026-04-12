@@ -84,9 +84,12 @@ export function SplashScreen({ onComplete }: Props) {
   }, []);
 
   useEffect(() => {
+    const activeRafs = rafs.current;
+    const activeTimers = timers.current;
+
     return () => {
-      rafs.current.forEach(cancelAnimationFrame);
-      timers.current.forEach(clearTimeout);
+      activeRafs.forEach(cancelAnimationFrame);
+      activeTimers.forEach(clearTimeout);
     };
   }, []);
 
@@ -335,7 +338,7 @@ export function SplashScreen({ onComplete }: Props) {
         if (overlayRef.current) overlayRef.current.style.transform = "";
       }, explosionDelay);
 
-      const etick = (_ts: DOMHighResTimeStamp) => {
+      const etick = () => {
         if (!energyActive) return;
         ctx.clearRect(0, 0, W, H);
 
@@ -517,7 +520,6 @@ export function SplashScreen({ onComplete }: Props) {
       energyActive = false;
       cancelAnimationFrame(energyRaf);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [raf, tick, complete]);
 
   // ── Render ─────────────────────────────────────────────────────────────────

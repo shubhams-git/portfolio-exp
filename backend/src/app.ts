@@ -1,7 +1,7 @@
 import cors from "cors";
 import express, { type NextFunction, type Request, type Response } from "express";
 
-import { env, type AppEnv } from "./config/env.js";
+import { env, normalizeOrigin, type AppEnv } from "./config/env.js";
 import {
   createNdjsonContactSubmissionStore,
   type ContactSubmissionStore,
@@ -24,7 +24,7 @@ export type AppDependencies = {
 /** Vercel deployment URLs (preview and production) use this host pattern. */
 const VERCEL_APP_ORIGIN = /^https:\/\/[a-z0-9-]+\.vercel\.app$/i;
 
-function createCorsOriginDelegate(env: AppEnv) {
+function createCorsOriginDelegate(env: AppEnv, logger: AppLogger) {
   const allowed = new Set(env.ALLOWED_ORIGINS);
 
   return (
@@ -35,14 +35,28 @@ function createCorsOriginDelegate(env: AppEnv) {
       callback(null, true);
       return;
     }
-    if (allowed.has(origin)) {
+
+    let normalizedOrigin: string;
+
+    try {
+      normalizedOrigin = normalizeOrigin(origin);
+    } catch {
+      logger.warn("[cors] rejected malformed origin", { origin });
+      callback(null, false);
+      return;
+    }
+
+    if (allowed.has(normalizedOrigin)) {
       callback(null, true);
       return;
     }
-    if (env.CORS_ALLOW_VERCEL_PREVIEW && VERCEL_APP_ORIGIN.test(origin)) {
+
+    if (env.CORS_ALLOW_VERCEL_PREVIEW && VERCEL_APP_ORIGIN.test(normalizedOrigin)) {
       callback(null, true);
       return;
     }
+
+    logger.warn("[cors] rejected origin", { origin: normalizedOrigin });
     callback(null, false);
   };
 }
@@ -66,7 +80,7 @@ export function createApp(dependencies: AppDependencies = {}) {
 
   app.use(
     cors({
-      origin: createCorsOriginDelegate(runtimeEnv),
+      origin: createCorsOriginDelegate(runtimeEnv, logger),
       credentials: true,
       methods: ["GET", "POST", "OPTIONS"],
     }),

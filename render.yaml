@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: portfolio-exp-api
+    runtime: node
+    plan: starter
+    rootDir: backend
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    autoDeployTrigger: commit
+    healthCheckPath: /api/health
+    buildFilter:
+      paths:
+        - backend/**
+        - render.yaml
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: CORS_ALLOW_VERCEL_PREVIEW
+        value: "true"
+      - key: CONTACT_RECEIVER
+        sync: false
+      - key: CONTACT_STORAGE_PATH
+        value: /var/data/contact-submissions.ndjson
+      - key: CONTACT_RATE_LIMIT_WINDOW_MS
+        value: "900000"
+      - key: CONTACT_RATE_LIMIT_MAX
+        value: "5"
+      - key: TRUST_PROXY
+        value: "true"
+    disk:
+      name: contact-submissions
+      mountPath: /var/data
+      sizeGB: 1
