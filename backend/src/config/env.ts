@@ -39,6 +39,11 @@ const envSchema = z.object({
     .string()
     .default("true")
     .transform((value) => parseBooleanString(value)),
+  /** When true, allow browser requests from https://*.vercel.app (preview and production project URLs). */
+  CORS_ALLOW_VERCEL_PREVIEW: z
+    .string()
+    .default("false")
+    .transform((value) => parseBooleanString(value)),
 });
 
 export type AppEnv = z.infer<typeof envSchema>;

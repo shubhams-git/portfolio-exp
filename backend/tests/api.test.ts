@@ -16,6 +16,7 @@ const baseEnv: AppEnv = {
   CONTACT_RATE_LIMIT_WINDOW_MS: 60_000,
   CONTACT_RATE_LIMIT_MAX: 2,
   TRUST_PROXY: true,
+  CORS_ALLOW_VERCEL_PREVIEW: false,
 };
 
 async function createTestApp(overrides: Partial<AppEnv> = {}) {

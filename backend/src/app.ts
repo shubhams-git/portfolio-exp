@@ -21,6 +21,32 @@ export type AppDependencies = {
   rateLimiter?: ContactRateLimiter;
 };
 
+/** Vercel deployment URLs (preview and production) use this host pattern. */
+const VERCEL_APP_ORIGIN = /^https:\/\/[a-z0-9-]+\.vercel\.app$/i;
+
+function createCorsOriginDelegate(env: AppEnv) {
+  const allowed = new Set(env.ALLOWED_ORIGINS);
+
+  return (
+    origin: string | undefined,
+    callback: (err: Error | null, allow?: boolean) => void,
+  ) => {
+    if (!origin) {
+      callback(null, true);
+      return;
+    }
+    if (allowed.has(origin)) {
+      callback(null, true);
+      return;
+    }
+    if (env.CORS_ALLOW_VERCEL_PREVIEW && VERCEL_APP_ORIGIN.test(origin)) {
+      callback(null, true);
+      return;
+    }
+    callback(null, false);
+  };
+}
+
 export function createApp(dependencies: AppDependencies = {}) {
   const runtimeEnv = dependencies.env ?? env;
   const logger = dependencies.logger ?? defaultLogger;
@@ -40,7 +66,7 @@ export function createApp(dependencies: AppDependencies = {}) {
 
   app.use(
     cors({
-      origin: runtimeEnv.ALLOWED_ORIGINS,
+      origin: createCorsOriginDelegate(runtimeEnv),
       credentials: true,
       methods: ["GET", "POST", "OPTIONS"],
     }),
